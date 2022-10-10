@@ -9,14 +9,14 @@
 		@media (hover) {
 			&:hover {
 				--btn-color      : var(--color-#{$name}--dark);
-				--btn-color-light: var(--color-#{$name}-20);
+				--btn-color-light: var(--color-#{$name}-10);
 			}
 		}
 	}
 }
 
 .btn {
-	--btn-color-light: var(--color-text-20);
+	--btn-color-light: var(--color-text-10);
 	--btn-color      : var(--color-text);
 	--btn-text       : var(--bg3);
 
@@ -60,7 +60,7 @@
 	@media (hover) {
 		&:hover {
 			--btn-color      : var(--color-text--dark);
-			--btn-color-light: var(--color-text-40);
+			--btn-color-light: var(--color-text-20);
 		}
 	}
 
