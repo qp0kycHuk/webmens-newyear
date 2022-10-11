@@ -9,7 +9,7 @@
 	@include getColors(#31A043, "green");
 	@include getColors(#EB5757, "red");
 	@include getColors(#828A99, "icon");
-	@include getColors(#333333, "text");
+	@include getColors(#302B44, "text");
 
 	--bg1: #E9EAEC;
 	--bg2: #F4F5F6;
@@ -349,8 +349,8 @@ body {
 }
 
 .code-cursor-wrapper {
-	position: absolute;
-	inset   : 0;
+	position      : absolute;
+	inset         : 0;
 	pointer-events: none;
 
 	canvas {
@@ -370,5 +370,112 @@ body {
 		position  : absolute;
 		left      : 0;
 		top       : 0;
+	}
+}
+
+.header {
+	display        : flex;
+	align-items    : center;
+	justify-content: space-between;
+	padding-top    : 25px;
+	padding-bottom : 25px;
+	position       : fixed;
+	left           : 0;
+	top            : 0;
+	width          : 100%;
+	z-index        : var(--zi-l1);
+
+	&-logo {
+		display    : flex;
+		align-items: center;
+
+		&__img {}
+
+		&__text {
+			font-weight: 600;
+			font-size  : 16px;
+			opacity    : 0.8;
+			margin-left: 16px;
+		}
+	}
+
+	&-nav {
+		display: flex;
+
+		&__item {
+			display : block;
+			position: relative;
+
+			&:before {
+				content : '';
+				position: absolute;
+				inset   : -20px;
+			}
+
+			@media(hover) {
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+
+			&+& {
+				margin-left: 40px;
+			}
+		}
+	}
+
+	&__phone {
+		font-weight: 700;
+		font-size  : 20px;
+	}
+}
+
+
+.started {
+	position      : relative;
+	isolation     : isolate;
+	padding-top   : 292px;
+	padding-bottom: 150px;
+
+
+
+	display       : flex;
+	flex-direction: column;
+	align-items   : center;
+	position      : relative;
+
+
+	&__logo {
+		height        : 195px;
+		mix-blend-mode: color-burn;
+		position      : relative;
+		z-index       : 2;
+	}
+
+	&__subtitle {
+		font-weight: 500;
+		font-size  : 26px;
+		margin-top : 80px;
+		position   : relative;
+		z-index    : 2;
+	}
+
+	&__btn {
+		margin-top   : 32px;
+		height       : 50px;
+		font-weight  : 400;
+		width        : 192px;
+		font-size    : 18px;
+		border-radius: 12px;
+		border-color : rgba(48, 43, 68, 0.6);
+		position     : relative;
+		z-index      : 2;
+
+		@media(hover) {
+			&:hover {
+				--btn-color : #fff;
+				border-color: #fff;
+			}
+		}
 	}
 }

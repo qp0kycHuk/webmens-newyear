@@ -36,17 +36,20 @@ function loadHandler() {
 
 	document.addEventListener('click', clickHandler)
 
-
-	const cover = document.querySelector('.window-content')
-	const canvas = cover.querySelector('.code-cursor-wrapper canvas')
+	const canvas = document.querySelector('.code-cursor-wrapper canvas')
 	const context = canvas.getContext("2d");
 	const { width, height } = canvas.getBoundingClientRect()
 
 	canvas.width = width
 	canvas.height = height
 
-	const img = new Image();
-	img.src = '/img/code.jpg';
+
+	const images = [
+		createImg('/img/test-1.jpg'),
+		createImg('/img/test-2.jpg'),
+		createImg('/img/test-3.jpg'),
+	]
+	let img = images[0];
 
 	const mask = new Image();
 	mask.src = '/img/code-mask.svg';
@@ -66,34 +69,169 @@ function loadHandler() {
 		document.body.addEventListener(getSupportedEvents().end, mouseleaveHandler)
 	}
 
+
+	const rect = {
+		x: 0,
+		y: 0,
+		width: 323,
+		height: 297
+	}
+
+	const current = {
+		x: 0,
+		y: 0,
+		width: rect.width,
+		height: rect.height
+	}
+
+	let xTarget = 1085 + rect.width / 2
+	let yTarget = 70 + rect.height / 2
+	let widthTarget = 0
+	let heightTarget = 0
+	let key = -1
+
+	let changingImage = false
+	let changingImageTimeout1
+	let changingImageTimeout2
+
+
 	function mousemoveHandler(event) {
+		isOver = true
+		event = eventsUnify(event)
 
-		setTimeout(() => {
-			if (!isOver) return;
-			event = eventsUnify(event)
-			context.clearRect(0, 0, canvas.width, canvas.height)
+		const { left, top, width, height } = canvas.getBoundingClientRect()
+		const { width: docWidth, height: docHeight } = document.body.getBoundingClientRect()
 
-			const { left, top, width, height } = cover.getBoundingClientRect()
-			const { width: docWidth } = document.body.getBoundingClientRect()
+		const offsetX = left + event.clientX
+		const offsetY = -top + event.clientY
+		xTarget = offsetX;
+		yTarget = offsetY;
 
-			const offsetX = event.clientX * (width / docWidth)
-			const offsetY = event.clientY - top
+		const oldSrc = img.src
+		img = images[2]
 
-			context.globalCompositeOperation = 'source-over';
-			context.drawImage(mask, offsetX - (323 / 2), offsetY - (297 / 2), 323, 297);
+		if (offsetX / width < 1 / 3) {
+			img = images[0]
+		} else if (offsetX / width < 2 / 3) {
+			img = images[1]
+		}
 
-			context.globalCompositeOperation = 'source-in';
-			context.drawImage(img, 0, 0);
+		if (oldSrc !== img.src) {
+			changingImage = 1
 
-			context.globalCompositeOperation = 'source-over';
-			context.drawImage(maskContur, offsetX - (323 / 2) + 8, offsetY - (297 / 2) + 8, 323, 297);
-		}, 100)
+			clearTimeout(changingImageTimeout1)
+			clearTimeout(changingImageTimeout2)
 
+			changingImageTimeout1 = setTimeout(() => {
+				changingImage = 2
+			}, 150)
+
+			changingImageTimeout2 = setTimeout(() => {
+				changingImage = 3
+			}, 600)
+		}
+	}
+
+
+
+	followMouse()
+
+
+	function followMouse() {
+		key = requestAnimationFrame(followMouse);
+
+
+		const difference = {
+			x: 0,
+			y: 0,
+			width: 0,
+			height: 0,
+			sizeCoof: 0.25
+		}
+
+		widthTarget = rect.width
+		heightTarget = rect.height
+
+		if (changingImage == 1) {
+			widthTarget = rect.width * 1.5
+			heightTarget = rect.height * 1.5
+			difference.sizeCoof = 0.1
+		}
+
+		if (changingImage == 2) {
+			widthTarget = rect.width
+			heightTarget = rect.height
+			difference.sizeCoof = 0.1
+		}
+
+		if (changingImage == 3) {
+			widthTarget = rect.width
+			heightTarget = rect.height
+		}
+
+		// if (!isOver) {
+		// 	widthTarget = 0
+		// 	heightTarget = 0
+		// }
+
+		if (!current.x || !current.y) {
+			current.x = xTarget;
+			current.y = yTarget;
+		}
+
+		difference.x = (xTarget - current.x) * 0.125;
+		difference.y = (yTarget - current.y) * 0.125;
+
+		if (Math.abs(difference.x) + Math.abs(difference.y) < 0.1) {
+			current.x = xTarget;
+			current.y = yTarget;
+		} else {
+			current.x += difference.x;
+			current.y += difference.y;
+		}
+
+		difference.width = (widthTarget - current.width) * difference.sizeCoof;
+		difference.height = (heightTarget - current.height) * difference.sizeCoof;
+
+		if (Math.abs(difference.width) + Math.abs(difference.height) < 0.1) {
+			current.width = widthTarget;
+			current.height = heightTarget;
+		} else {
+			current.width += difference.width;
+			current.height += difference.height;
+		}
+
+		const position = {
+			x: current.x - (current.width / 2),
+			y: current.y - (current.height / 2)
+		}
+
+		// if (current.width == 0 && current.height == 0) {
+		// 	current.x = 0
+		// 	current.y = 0
+		// }
+
+
+		// console.log(current);
+
+		context.clearRect(0, 0, canvas.width, canvas.height)
+
+		context.globalCompositeOperation = 'source-over';
+		context.drawImage(mask, position.x, position.y, current.width, current.height);
+
+		context.globalCompositeOperation = 'source-in';
+		context.drawImage(img, position.x, position.y, current.width, current.height);
+
+		context.globalCompositeOperation = 'source-over';
+		context.drawImage(maskContur, position.x + 8, position.y + 8, current.width, current.height);
 	}
 
 	function mouseleaveHandler(event) {
-		isOver = false
-		context.clearRect(0, 0, canvas.width, canvas.height)
+		setTimeout(() => {
+			xTarget = 1085 + rect.width / 2
+			yTarget = 70 + rect.height / 2
+			isOver = false
+		}, 100)
 	}
 
 	function mouseenterHandler(event) {
@@ -201,3 +339,9 @@ function clickHandler(event) {
 	}
 }
 
+function createImg(src) {
+	const img = new Image()
+	img.src = src
+
+	return img
+}
