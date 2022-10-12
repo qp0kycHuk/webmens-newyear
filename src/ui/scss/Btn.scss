@@ -30,14 +30,14 @@
 	align-items    : center;
 	justify-content: center;
 
-	--size       : 40px;
+	--size       : 50px;
 	height       : var(--size);
 	padding      : 0 calc(var(--size) / 2);
-	border-radius: var(--radius-small);
+	border-radius: 12px;
 
-	font-size  : 14px;
+	font-size  : 18px;
 	font-family: var(--font-base);
-	font-weight: bold;
+	// font-weight: bold;
 
 	transition: .2s ease;
 

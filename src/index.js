@@ -10,8 +10,7 @@ import toggle from 'npm-kit-toggle';
 import ripple from 'npm-kit-ripple';
 import Swiper, { Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade, Lazy } from 'swiper';
 
-
-import './index.scss';
+import './scss/index.scss';
 
 Swiper.use([Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade, Lazy]);
 Swiper.defaults.touchStartPreventDefault = false
@@ -36,13 +35,21 @@ function loadHandler() {
 	ripple.deAttach('.btn--link')
 
 	document.addEventListener('click', clickHandler)
+	window.addEventListener('scroll', scrollHandler)
 
+	scrollHandler()
+}
 
-
+function scrollHandler() {
+	if (window.scrollY <= 0) {
+		document.body.classList.add('scroll-top')
+	} else {
+		document.body.classList.remove('scroll-top')
+	}
 }
 
 
-
+// functions for emulate brauser actions in plug page
 function addFavorite() {
 	const title = document.title;
 	const url = document.location;
@@ -83,25 +90,19 @@ function reload() {
 	window.location.reload()
 }
 
-// function close() {
-// 	if (confirm("Вы хотите закрыть окно?")) {
-// 		window.close()
-// 	}
-// }
-
 function clickHandler(event) {
 	if (event.target.closest('[data-add-favorite]')) {
 		addFavorite()
 	}
+
 	if (event.target.closest('[data-share]')) {
 		share()
 	}
+
 	if (event.target.closest('[data-reload]')) {
 		reload()
 	}
-	// if (event.target.closest('[data-close]')) {
-	// 	close()
-	// }
+
 	if (event.target.closest('[data-open-new-tab]')) {
 		openNewTab()
 	}

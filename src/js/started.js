@@ -3,7 +3,7 @@ import { getSupportedEvents } from "./functions/getSupportedEvents";
 
 
 
-let canvas, context, width, height
+let cover, canvas, context, width, height
 const mask = createImg('/img/code-mask.svg');
 const maskContur = createImg('/img/code-mask-contur.svg');
 
@@ -25,15 +25,11 @@ const rect = {
   height: 297
 }
 
-rect.x = 1085 + rect.width / 2
-rect.y = 70 + rect.height / 2
 
 
 // current properties of object
 // change in request animation frame
 const current = {
-  x: rect.x,
-  y: rect.y,
   width: rect.width,
   height: rect.height
 }
@@ -41,8 +37,6 @@ const current = {
 // target properties for object
 // calculates when mouse move or someting
 const target = {
-  x: rect.x,
-  y: rect.y,
   width: 0,
   height: 0
 }
@@ -56,26 +50,37 @@ let changingImageTimeout2
 
 
 function init() {
+
+  cover = document.querySelector('.code-cursor-cover')
   canvas = document.querySelector('.code-cursor-wrapper canvas')
   context = canvas.getContext("2d");
+  setSizes()
+
+  followMouse()
+  cover.addEventListener(getSupportedEvents().move, throttle(mousemoveHandler, 1000 / 60))
+
+  window.addEventListener('resize', setSizes)
+
+  if (getSupportedEvents().type == 'mouse') {
+    cover.addEventListener(getSupportedEvents().cancel, mouseleaveHandler)
+    cover.addEventListener('mouseenter', mouseenterHandler)
+
+  } else {
+    cover.addEventListener(getSupportedEvents().start, mouseenterHandler)
+    cover.addEventListener(getSupportedEvents().cancel, mouseleaveHandler)
+    cover.addEventListener(getSupportedEvents().end, mouseleaveHandler)
+
+  }
+}
+
+function setSizes() {
   const size = canvas.getBoundingClientRect()
 
   canvas.width = width = size.width
   canvas.height = height = size.height
 
-  followMouse()
-  document.body.addEventListener(getSupportedEvents().move, throttle(mousemoveHandler, 1000 / 60))
-
-  if (getSupportedEvents().type == 'mouse') {
-    document.body.addEventListener(getSupportedEvents().cancel, mouseleaveHandler)
-    document.body.addEventListener('mouseenter', mouseenterHandler)
-
-  } else {
-    document.body.addEventListener(getSupportedEvents().start, mouseenterHandler)
-    document.body.addEventListener(getSupportedEvents().cancel, mouseleaveHandler)
-    document.body.addEventListener(getSupportedEvents().end, mouseleaveHandler)
-
-  }
+  rect.x = current.x = target.x = (size.width * 1085 / 1920) + rect.width / 2
+  rect.y = current.y = target.y = 70 + rect.height / 2
 }
 
 function mousemoveHandler(event) {
@@ -199,6 +204,7 @@ function draw(options) {
 }
 
 function mouseleaveHandler(event) {
+  console.log('leave', event.target);
   setTimeout(() => {
     target.x = rect.x
     target.y = rect.y
