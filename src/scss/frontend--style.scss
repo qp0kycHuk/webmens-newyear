@@ -712,7 +712,7 @@ body:not(.scroll-top) .header {
 		display       : flex;
 		flex-direction: column;
 		align-items   : flex-start;
-		padding-top: 120px;
+		padding-top   : 120px;
 	}
 
 	&__title {
@@ -749,6 +749,18 @@ body:not(.scroll-top) .header {
 	}
 }
 
-.park{
+.park {
 	background: url("../img/work/park/background.jpg") no-repeat center / cover;
+}
+
+.footer {
+	background    : #F2F2F7;
+	padding-top   : 52px;
+	padding-bottom: 42px;
+
+	&-nav {
+		display       : flex;
+		flex-direction: column;
+		align-items   : flex-start;
+	}
 }
