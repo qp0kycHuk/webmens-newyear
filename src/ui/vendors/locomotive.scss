@@ -13,6 +13,14 @@ html.has-scroll-dragging {
     overflow: hidden;
 }
 
+[data-scroll] {
+    will-change: transform;
+}
+
+[data-scroll-section] {
+    will-change: transform, opacity;
+}
+
 .has-scroll-smooth [data-scroll-container] {
     min-height: 100vh;
 }

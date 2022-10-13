@@ -6,47 +6,60 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Создание и продвижение сайтов в Краснодаре : Веб-студия КИТ</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+	<link rel="manifest" href="favicon/site.webmanifest">
+	<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#302b44">
+	<link rel="shortcut icon" href="favicon/favicon.ico">
+	<meta name="msapplication-TileColor" content="#302b44">
+	<meta name="msapplication-config" content="favicon/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
 </head>
 
-<body>
+<body class="scroll-top">
+  <header class="header">
+    <div class="header-logo">
+      <div class="header-logo__img">
+        <img src="img/header-logo-img.svg" alt="">
+      </div>
+      <div class="header-logo__text">
+        Веб-студия КИТ
+      </div>
+    </div>
+    <div class="header-nav">
+      <a href="" class="header-nav__item">Главная</a>
+      <a href="" class="header-nav__item">Услуги</a>
+      <a href="" class="header-nav__item">Портфолио</a>
+      <a href="" class="header-nav__item">Контакты</a>
+    </div>
+    <a href="" class="header__phone">+7 (918) 317-99-73</a>
+  </header>
+
   <div data-scroll-container>
 
-    <!-- <div class="background-wrapper">
-      <div class="background animate__animated animate__fadeIn">
-        <div class="background-item background-item--1"></div>
-        <div class="background-item background-item--2"></div>
-        <div class="background-item background-item--3"></div>
-        <div class="background-item background-item--4"></div>
-      </div>
-    </div> -->
-    <header class="header">
-      <div class="header-logo">
-        <div class="header-logo__img">
-          <img src="img/header-logo-img.svg" alt="">
-        </div>
-        <div class="header-logo__text">
-          Веб-студия КИТ
-        </div>
-      </div>
-      <div class="header-nav">
-        <a href="" class="header-nav__item">Главная</a>
-        <a href="" class="header-nav__item">Услуги</a>
-        <a href="" class="header-nav__item">Портфолио</a>
-        <a href="" class="header-nav__item">Контакты</a>
-      </div>
-      <a href="" class="header__phone">+7 (918) 317-99-73</a>
-    </header>
+
 
     <section class="started code-cursor-cover" data-scroll-section>
-
-      <div class="started__logo" data-scroll data-scroll-speed="2">
-        <img src="img/started-logo.svg" alt="">
+      <div class="background-wrapper">
+        <div class="background animate__animated animate__fadeIn">
+          <div class="background-item background-item--1"></div>
+          <div class="background-item background-item--2"></div>
+          <div class="background-item background-item--3"></div>
+          <div class="background-item background-item--4"></div>
+        </div>
       </div>
-      <div class="started__subtitle" data-scroll data-scroll-speed="2">Разработка и реклама сайтов</div>
-      <button class="started__btn btn btn--text btn--contur" data-scroll data-scroll-speed="2">Узнать как</button>
+      <div class="started-inner">
+        <div class="started__logo" data-scroll data-scroll-speed="2">
+          <img src="img/started-logo.svg" alt="">
+        </div>
+        <div class="started__subtitle" data-scroll data-scroll-speed="2">Разработка и реклама сайтов</div>
+        <button class="started__btn btn btn--text btn--contur" data-scroll data-scroll-speed="2">Узнать как</button>
 
-      <div class="code-cursor-wrapper">
-        <canvas></canvas>
+        <div class="code-cursor-wrapper">
+          <canvas></canvas>
+        </div>
       </div>
     </section>
 
@@ -57,13 +70,13 @@
             <div class="index-service-item-video">
               <!-- <video src="media/service-hover-programming.mp4" muted autoplay loop></video> -->
             </div>
-            <div class="index-service-item-content" data-scroll data-scroll-delay="0.05" data-scroll-speed="1.5">
-              <div class="text-h3 mb-7 text--center index-service-item-title" >Разработка сайта</div>
-              <div class="fade-60 text-body-0 text--center index-service-item-subtitle" >
+            <div class="index-service-item-content" data-scroll data-scroll-delay="0.05" data-scroll-speed="1.2">
+              <div class="text-h3 mb-7 text--center index-service-item-title">Разработка сайта</div>
+              <div class="fade-60 text-body-0 text--center index-service-item-subtitle">
                 Разработка корпоративного сайта, интернет-магазина <br>
                 или лендинга - это к нам
               </div>
-              <div class="fade-60 text-body-0 text--center mt-auto index-service-item-sign" >
+              <div class="fade-60 text-body-0 text--center mt-auto mb-5 index-service-item-sign">
                 Корпоративный сайт / Интернет-магазин / Лендинг (Landing Page)
               </div>
             </div>
@@ -74,13 +87,13 @@
             <div class="index-service-item-video">
               <!-- <video src="media/service-hover-chart.webm" muted autoplay loop></video> -->
             </div>
-            <div class="index-service-item-content" data-scroll data-scroll-delay="0.05" data-scroll-speed="1.5">
-              <div class="text-h3 mb-7 text--center index-service-item-title" >Работа с сайтом</div>
-              <div class="fade-60 text-body-0 text--center index-service-item-subtitle" >
+            <div class="index-service-item-content" data-scroll data-scroll-delay="0.05" data-scroll-speed="1.2">
+              <div class="text-h3 mb-7 text--center index-service-item-title">Работа с сайтом</div>
+              <div class="fade-60 text-body-0 text--center index-service-item-subtitle">
                 Техническая поддержка, SEO-продвижение и контекстная <br>
                 реклама - мы прокачаем ваш сайт
               </div>
-              <div class="fade-60 text-body-0 text--center mt-auto index-service-item-sign" >
+              <div class="fade-60 text-body-0 text--center mt-auto mb-5 index-service-item-sign">
                 Техническая поддержка / SEO-продвижение / Контекстная реклама
               </div>
             </div>
@@ -91,13 +104,13 @@
             <div class="index-service-item-video">
               <!-- <video src="media/service-hover-marketing.webm" muted autoplay loop></video> -->
             </div>
-            <div class="index-service-item-content" data-scroll data-scroll-delay="0.05" data-scroll-speed="1.5">
-              <div class="text-h3 mb-7 text--center index-service-item-title" >Продвижение сайта</div>
-              <div class="fade-60 text-body-0 text--center index-service-item-subtitle" >
+            <div class="index-service-item-content" data-scroll data-scroll-delay="0.05" data-scroll-speed="1.2">
+              <div class="text-h3 mb-7 text--center index-service-item-title">Продвижение сайта</div>
+              <div class="fade-60 text-body-0 text--center index-service-item-subtitle">
                 Инстаграм для вашего бизнеса - от оформления <br>
                 до администрирования
               </div>
-              <div class="fade-60 text-body-0 text--center mt-auto index-service-item-sign" >
+              <div class="fade-60 text-body-0 text--center mt-auto mb-5 index-service-item-sign">
                 Дизайн и креатив / Оформление аккаунта / Администрирование
               </div>
             </div>
@@ -108,13 +121,13 @@
             <div class="index-service-item-video">
               <!-- <video src="media/service-hover-app.webm" muted autoplay loop></video> -->
             </div>
-            <div class="index-service-item-content" data-scroll data-scroll-delay="0.05" data-scroll-speed="1.5">
-              <div class="text-h3 mb-7 text--center index-service-item-title" >Разработка веб-приложений и систем</div>
-              <div class="fade-60 text-body-0 text--center index-service-item-subtitle" >
+            <div class="index-service-item-content" data-scroll data-scroll-delay="0.05" data-scroll-speed="1.2">
+              <div class="text-h3 mb-7 text--center index-service-item-title">Разработка веб-приложений и систем</div>
+              <div class="fade-60 text-body-0 text--center index-service-item-subtitle">
                 Инстаграм для вашего бизнеса - от оформления <br>
                 до администрирования
               </div>
-              <div class="fade-60 text-body-0 text--center mt-auto index-service-item-sign" >
+              <div class="fade-60 text-body-0 text--center mt-auto mb-5 index-service-item-sign">
                 Корпоративный сайт / SEO-продвижение / Лендинг (Landing Page)
               </div>
             </div>
@@ -124,12 +137,13 @@
     </section>
 
     <section class="nothing" data-scroll-section>
-      <div class="nothing__title" data-scroll data-scroll-delay="0.05" data-scroll-speed="1.5">
+      <div class="nothing__title" data-scroll data-scroll-delay="0.25" data-scroll-speed="1.5">
         Реализуем все ваши <div class="nothing-lamp"><img src="img/lamp.png" alt=""></div> идеи, <br>
         превратив их <div class="nothing-money"><img src="img/money.png" alt=""></div> в прибыльный <br>
         интернет-ресурс <div class="nothing-rocket"><img src="img/rocket.png" alt=""></div>
+
       </div>
-      <div class="nothing__subtitle" data-scroll data-scroll-delay="0.05" data-scroll-speed="2">
+      <div class="nothing__subtitle" data-scroll data-scroll-delay="0.1" data-scroll-speed="2">
         Наша работа находится на стыке творчества и технологий
         <span>
           Можете посмотреть наши лучшие работы
@@ -144,64 +158,64 @@
       </div>
     </section>
 
-
-    <section class="work flora mb-8" data-scroll-section>
-      <div class="container flex">
-        <div class="work__content">
-          <div class="work__title flora__title mb-10">
-            Магазин цветов <br>
-            Флора <img src="img/work/flora/title-icon.png" alt="">
+    <div class="work-wrapper" data-scroll-section>
+      <section class="work flora mb-8">
+        <div class="container flex">
+          <div class="work__content">
+            <div class="work__title flora__title mb-10">
+              Магазин цветов <br>
+              Флора <img src="img/work/flora/title-icon.png" alt="">
+            </div>
+            <div class="lh-1-5 mb-10">
+              Интернет-магазин цветов «Флора» предлагает <br>
+              уникальные букеты живых цветов собранные по всем <br>
+              правилам флористики
+            </div>
+            <div class="text-subtitle-1 lh-1-5">
+              Разработка <span class="fade-40">сайта</span> <br>
+              Продвижение <span class="fade-40">в топ</span> <br>
+              Техническая поддержка
+            </div>
+            <div class="mb-10"></div>
+            <div class="mb-10"></div>
+            <button class="btn btn--text btn--contur">Смотреть сайт</button>
           </div>
-          <div class="lh-1-5 mb-10">
-            Интернет-магазин цветов «Флора» предлагает <br>
-            уникальные букеты живых цветов собранные по всем <br>
-            правилам флористики
+          <div class="work__preview flex-self-end" data-scroll>
+            <img src="img/work/flora/preview.jpg" alt="">
           </div>
-          <div class="text-subtitle-1 lh-1-5">
-            Разработка <span class="fade-40">сайта</span> <br>
-            Продвижение <span class="fade-40">в топ</span> <br>
-            Техническая поддержка
-          </div>
-          <div class="mb-10"></div>
-          <div class="mb-10"></div>
-          <button class="btn btn--text btn--contur">Смотреть сайт</button>
         </div>
-        <div class="work__preview flex-self-end" data-scroll>
-          <img src="img/work/flora/preview.jpg" alt="">
-        </div>
-      </div>
-    </section>
-
-
-
-    <section class="work park" data-scroll-section>
-      <div class="container flex">
-        <div class="work__content">
-          <div class="work__title park__title mb-10">
-            Инфомат <br>
-            в парке <img src="img/work/park/title-icon.png" alt=""> <br>
-            Краснодар
+      </section>
+    </div>
+    <div class="work-wrapper" data-scroll-section>
+      <section class="work park">
+        <div class="container flex">
+          <div class="work__content">
+            <div class="work__title park__title mb-10">
+              Инфомат <br>
+              в парке <img src="img/work/park/title-icon.png" alt=""> <br>
+              Краснодар
+            </div>
+            <div class="lh-1-5 mb-10">
+              Эстетика, современный стиль, комфорт – все это <br>
+              про наше место отдыха. <br>
+              Приезжайте и наслаждайтесь <br>
+              спокойным отдыхом в приятном окружении!
+            </div>
+            <div class="text-subtitle-1 lh-1-5">
+              Разработка <span class="fade-40">сайта</span> <br>
+              Продвижение <span class="fade-40">в топ</span> <br>
+              Техническая поддержка
+            </div>
+            <div class="mb-10"></div>
+            <div class="mb-10"></div>
+            <button class="btn btn--text btn--contur">Смотреть сайт</button>
           </div>
-          <div class="lh-1-5 mb-10">
-            Эстетика, современный стиль, комфорт – все это <br>
-            про наше место отдыха. <br>
-            Приезжайте и наслаждайтесь <br>
-            спокойным отдыхом в приятном окружении!
+          <div class="work__preview flex-self-end" data-scroll>
+            <img src="img/work/park/preview.jpg" alt="">
           </div>
-          <div class="text-subtitle-1 lh-1-5">
-            Разработка <span class="fade-40">сайта</span> <br>
-            Продвижение <span class="fade-40">в топ</span> <br>
-            Техническая поддержка
-          </div>
-          <div class="mb-10"></div>
-          <div class="mb-10"></div>
-          <button class="btn btn--text btn--contur">Смотреть сайт</button>
         </div>
-        <div class="work__preview flex-self-end" data-scroll>
-          <img src="img/work/park/preview.jpg" alt="">
-        </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <section class="partners" data-scroll-section>
       <div class="partners__title">работаем с 2014 года</div>

@@ -8,16 +8,16 @@ import started from "./js/started";
 import tab from 'npm-kit-tab';
 import toggle from 'npm-kit-toggle';
 import ripple from 'npm-kit-ripple';
-import Swiper, { Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade, Lazy } from 'swiper';
+// import Swiper, { Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade, Lazy } from 'swiper';
 import LocomotiveScroll from 'locomotive-scroll';
 
 
 
 import './scss/index.scss';
 
-Swiper.use([Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade, Lazy]);
-Swiper.defaults.touchStartPreventDefault = false
-window.Swiper = Swiper
+// Swiper.use([Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade, Lazy]);
+// Swiper.defaults.touchStartPreventDefault = false
+// window.Swiper = Swiper
 window.ripple = ripple
 window.addEventListener('DOMContentLoaded', () => loadHandler())
 
@@ -25,6 +25,16 @@ window.addEventListener('DOMContentLoaded', () => loadHandler())
 
 
 function loadHandler() {
+
+	const scroll = new LocomotiveScroll({
+		el: document.querySelector('[data-scroll-container]'),
+		smooth: true,
+		lerp: 0.1,
+		offset: [-1200, -1200]
+	});
+
+	scroll.on('scroll', scrollHandler)
+
 	fancybox.init()
 	showPass.init()
 	scrollTo.init()
@@ -41,21 +51,15 @@ function loadHandler() {
 	ripple.deAttach('.btn--link')
 
 	document.addEventListener('click', clickHandler)
-	window.addEventListener('scroll', scrollHandler)
 
 
-	const scroll = new LocomotiveScroll({
-		el: document.querySelector('[data-scroll-container]'),
-		smooth: true,
-		lerp: 0.1,
-		offset: [-200, -200]
-	});
 
-	scrollHandler()
+
+
 }
 
-function scrollHandler() {
-	if (window.scrollY <= 0) {
+function scrollHandler(event) {
+	if (event.scroll.y <= 40) {
 		document.body.classList.add('scroll-top')
 	} else {
 		document.body.classList.remove('scroll-top')

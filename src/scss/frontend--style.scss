@@ -453,7 +453,7 @@ body:not(.scroll-top) .header {
 	position      : relative;
 	isolation     : isolate;
 	padding-top   : 292px;
-	padding-bottom: 70px;
+	padding-bottom: 150px;
 
 
 
@@ -467,12 +467,29 @@ body:not(.scroll-top) .header {
 		bottom        : -200px;
 	}
 
+	&-inner {
+		isolation     : isolate;
+		display       : flex;
+		flex-direction: column;
+		align-items   : center;
+
+	}
 
 	&__logo {
 		height        : 195px;
 		mix-blend-mode: color-burn;
 		position      : relative;
 		z-index       : 3;
+
+		background        : linear-gradient(90deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+		background-size   : 400% 400%;
+		animation         : gradient 10s ease infinite;
+		// animation      : glowing 20s linear infinite;
+		mask              : url("../img/started-logo.svg") no-repeat center / contain;
+
+		img {
+			opacity: 0;
+		}
 	}
 
 	&__subtitle {
@@ -503,10 +520,34 @@ body:not(.scroll-top) .header {
 	}
 }
 
+@keyframes glowing {
 
+	0%,
+	100% {
+		background-position: 0 0
+	}
+
+	50% {
+		background-position: 400% 0
+	}
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+
+	50% {
+		background-position: 100% 50%;
+	}
+
+	100% {
+		background-position: 0% 50%;
+	}
+}
 
 .index-service {
-	padding-top  : 80px;
+	padding-top  : 150px;
 	padding-left : 30px;
 	padding-right: 30px;
 	position     : relative;
@@ -713,6 +754,17 @@ body:not(.scroll-top) .header {
 	padding-top   : 132px;
 	padding-bottom: 0;
 	overflow      : hidden;
+
+	&-wrapper {
+		padding-top   : 100px;
+		padding-bottom: 100px;
+		margin-top    : -100px;
+		margin-bottom : -100px;
+
+		&+& {
+			margin-top: -200px;
+		}
+	}
 
 
 	&__content {
