@@ -9,6 +9,9 @@ import tab from 'npm-kit-tab';
 import toggle from 'npm-kit-toggle';
 import ripple from 'npm-kit-ripple';
 import Swiper, { Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade, Lazy } from 'swiper';
+import LocomotiveScroll from 'locomotive-scroll';
+
+
 
 import './scss/index.scss';
 
@@ -17,6 +20,9 @@ Swiper.defaults.touchStartPreventDefault = false
 window.Swiper = Swiper
 window.ripple = ripple
 window.addEventListener('DOMContentLoaded', () => loadHandler())
+
+
+
 
 function loadHandler() {
 	fancybox.init()
@@ -36,6 +42,14 @@ function loadHandler() {
 
 	document.addEventListener('click', clickHandler)
 	window.addEventListener('scroll', scrollHandler)
+
+
+	const scroll = new LocomotiveScroll({
+		el: document.querySelector('[data-scroll-container]'),
+		smooth: true,
+		lerp: 0.1,
+		offset: [-200, -200]
+	});
 
 	scrollHandler()
 }

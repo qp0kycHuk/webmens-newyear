@@ -59,6 +59,8 @@ body {
 
 }
 
+section {}
+
 .active-enabled {
 	display: none !important;
 }
@@ -515,6 +517,7 @@ body:not(.scroll-top) .header {
 		height        : 420px;
 		padding       : 40px 20px;
 		padding-top   : 140px;
+		padding-top   : 100px;
 		display       : flex;
 		flex-direction: column;
 		position      : relative;
@@ -566,21 +569,25 @@ body:not(.scroll-top) .header {
 		}
 
 		&:hover {
-			color: #fff;
+			// color: #fff;
 		}
 
+		&-sign,
 		&-title {
 			transition: color .2s, transform .5s;
 		}
 
-		&-subtitle,
-		&-sign {
+		&-subtitle {
 			transition: .2s;
 		}
 
-		&:hover &-subtitle,
-		&:hover &-sign {
+		// &:hover &-sign,
+		&:hover &-subtitle {
 			opacity: 0;
+		}
+
+		&:hover &-sign {
+			transform: translateY(-2em)
 		}
 
 		&:hover &-title {
