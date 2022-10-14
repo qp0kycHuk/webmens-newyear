@@ -21,19 +21,22 @@ import './scss/index.scss';
 window.ripple = ripple
 window.addEventListener('DOMContentLoaded', () => loadHandler())
 
+window.addEventListener('load', () => {
+	document.body.classList.add('loaded')
+	const scroll = new LocomotiveScroll({
+		el: document.querySelector('[data-scroll-container]'),
+		smooth: true,
+		lerp: 0.05,
+		// offset: [-1200, -1200]
+	});
 
+	scroll.on('scroll', scrollHandler)
+})
 
 
 function loadHandler() {
 
-	const scroll = new LocomotiveScroll({
-		el: document.querySelector('[data-scroll-container]'),
-		smooth: true,
-		lerp: 0.1,
-		offset: [-1200, -1200]
-	});
 
-	scroll.on('scroll', scrollHandler)
 
 	fancybox.init()
 	showPass.init()

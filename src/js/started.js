@@ -51,7 +51,7 @@ let changingImageTimeout2
 
 function init() {
 
-  cover = document.querySelector('.code-cursor-cover')
+  cover = document.querySelector('.started__logo-wrapper')
   canvas = document.querySelector('.code-cursor-wrapper canvas')
   context = canvas.getContext("2d");
   setSizes()
@@ -88,6 +88,7 @@ function mousemoveHandler(event) {
   event = eventsUnify(event)
 
   const { left, top, width, height } = canvas.getBoundingClientRect()
+  const { width: coverWidth, left: coverLeft } = cover.getBoundingClientRect()
   const { width: docWidth, height: docHeight } = document.body.getBoundingClientRect()
 
   const offsetX = left + event.clientX
@@ -98,7 +99,7 @@ function mousemoveHandler(event) {
   const oldSrc = img.src
 
   for (let i = 0; i < images.length; i++) {
-    if (offsetX / width <= (i + 1) / images.length) {
+    if ((offsetX - coverLeft) / coverWidth <= (i + 1) / images.length) {
       img = images[i]
       break
     }

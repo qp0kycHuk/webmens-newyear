@@ -8,14 +8,14 @@
   <title>Создание и продвижение сайтов в Краснодаре : Веб-студия КИТ</title>
 
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-	<link rel="manifest" href="favicon/site.webmanifest">
-	<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#302b44">
-	<link rel="shortcut icon" href="favicon/favicon.ico">
-	<meta name="msapplication-TileColor" content="#302b44">
-	<meta name="msapplication-config" content="favicon/browserconfig.xml">
-	<meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#302b44">
+  <link rel="shortcut icon" href="favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#302b44">
+  <meta name="msapplication-config" content="favicon/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
 </head>
 
 <body class="scroll-top">
@@ -51,11 +51,18 @@
         </div>
       </div>
       <div class="started-inner">
-        <div class="started__logo" data-scroll data-scroll-speed="2">
-          <img src="img/started-logo.svg" alt="">
+        <div class="started__logo-wrapper">
+          <div class="started__logo">
+            <img src="img/started-logo.svg" alt="">
+          </div>
         </div>
-        <div class="started__subtitle" data-scroll data-scroll-speed="2">Разработка и реклама сайтов</div>
-        <button class="started__btn btn btn--text btn--contur" data-scroll data-scroll-speed="2">Узнать как</button>
+        <div data-scroll data-scroll-speed="1.5">
+          <div class="started__subtitle">Разработка и реклама сайтов</div>
+        </div>
+        <div data-scroll data-scroll-speed="1.5">
+          <button class="started__btn btn btn--text btn--contur">Узнать как</button>
+
+        </div>
 
         <div class="code-cursor-wrapper">
           <canvas></canvas>
@@ -136,42 +143,64 @@
       </div>
     </section>
 
+
     <section class="nothing" data-scroll-section>
-      <div class="nothing__title" data-scroll data-scroll-delay="0.25" data-scroll-speed="1.5">
-        Реализуем все ваши <div class="nothing-lamp"><img src="img/lamp.png" alt=""></div> идеи, <br>
-        превратив их <div class="nothing-money"><img src="img/money.png" alt=""></div> в прибыльный <br>
-        интернет-ресурс <div class="nothing-rocket"><img src="img/rocket.png" alt=""></div>
+      <div class="nothing-background">
+        <div class="nothing-background__item" data-scroll data-scroll-delay="0.25" data-scroll-speed="-2"></div>
+        <div class="nothing-background__item nothing-background__item--big" data-scroll data-scroll-delay="0.25"
+          data-scroll-speed="-2"></div>
+        <div class="nothing-background__item" data-scroll data-scroll-delay="0.25" data-scroll-speed="-2"></div>
+        <div class="nothing-background__item" data-scroll data-scroll-delay="0.25" data-scroll-speed="-2"></div>
+        <div class="nothing-background__item" data-scroll data-scroll-delay="0.25" data-scroll-speed="-2"></div>
+
+        <div class="nothing-background__item nothing-background__item--big" data-scroll data-scroll-delay="0.25"
+          data-scroll-speed="-2"></div>
+        <div class="nothing-background__item" data-scroll data-scroll-delay="0.25" data-scroll-speed="-2"></div>
+        <div class="nothing-background__item" data-scroll data-scroll-delay="0.25" data-scroll-speed="-2"></div>
+        <div class="nothing-background__item" data-scroll data-scroll-delay="0.25" data-scroll-speed="-2"></div>
+        <div class="nothing-background__item" data-scroll data-scroll-delay="0.25" data-scroll-speed="-2"></div>
 
       </div>
-      <div class="nothing__subtitle" data-scroll data-scroll-delay="0.1" data-scroll-speed="2">
-        Наша работа находится на стыке творчества и технологий
-        <span>
-          Можете посмотреть наши лучшие работы
-        </span>
-      </div>
-      <div class="flex" data-scroll data-scroll-delay="0.05" data-scroll-speed="2.5">
-        <button class="nothing__btn btn btn--text btn--contur">
-          <svg class="icon">
-            <use xlink:href="img/icons.svg#to-down" />
-          </svg>
-        </button>
+      <div class="nothing-content">
+        <div class="nothing__title" data-scroll data-scroll-delay="0.25" data-scroll-speed="1.5">
+          Реализуем все ваши <div class="nothing-lamp"><img src="img/lamp.png" alt=""></div> идеи, <br>
+          превратив их <div class="nothing-money"><img src="img/money.png" alt=""></div> в прибыльный <br>
+          интернет-ресурс <div class="nothing-rocket"><img src="img/rocket.png" alt=""></div>
+
+        </div>
+        <div class="nothing__subtitle" data-scroll data-scroll-delay="0.1" data-scroll-speed="2">
+          Наша работа находится на стыке творчества и технологий
+          <span>
+            Можете посмотреть наши лучшие работы
+          </span>
+        </div>
+        <div class="flex" data-scroll data-scroll-delay="0.05" data-scroll-speed="2.5">
+          <button class="nothing__btn btn btn--text btn--contur">
+            <svg class="icon">
+              <use xlink:href="img/icons.svg#to-down" />
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
 
+    <!-- Flora Norilsk -->
     <div class="work-wrapper" data-scroll-section>
-      <section class="work flora mb-8">
+      <div class="work-fixed-target" id="flora-fixed-target"></div>
+
+      <section class="work flora" data-scroll data-scroll-sticky data-scroll-target="#flora-fixed-target">
         <div class="container flex">
-          <div class="work__content">
-            <div class="work__title flora__title mb-10">
+          <div class="work__content" data-scroll data-scroll-speed="2">
+            <div class="work__title flora__title mb-10 ">
               Магазин цветов <br>
               Флора <img src="img/work/flora/title-icon.png" alt="">
             </div>
-            <div class="lh-1-5 mb-10">
+            <div class="lh-1-5 mb-10 ">
               Интернет-магазин цветов «Флора» предлагает <br>
               уникальные букеты живых цветов собранные по всем <br>
               правилам флористики
             </div>
-            <div class="text-subtitle-1 lh-1-5">
+            <div class="text-subtitle-1 lh-1-5 ">
               Разработка <span class="fade-40">сайта</span> <br>
               Продвижение <span class="fade-40">в топ</span> <br>
               Техническая поддержка
@@ -180,16 +209,33 @@
             <div class="mb-10"></div>
             <button class="btn btn--text btn--contur">Смотреть сайт</button>
           </div>
-          <div class="work__preview flex-self-end" data-scroll>
+          <div class="work__preview flex-self-end" data-scroll data-scroll-speed="-2">
             <img src="img/work/flora/preview.jpg" alt="">
           </div>
         </div>
+        <div class="flora-buner flora-buner--1" data-scroll data-scroll-speed="5">
+          <img src="img/work/flora/buner-1.png" alt="">
+        </div>
+        <div class="flora-buner flora-buner--2" data-scroll data-scroll-speed="4">
+          <img src="img/work/flora/buner-2.png" alt="">
+        </div>
+        <div class="flora-buner flora-buner--3" data-scroll data-scroll-speed="5">
+          <img src="img/work/flora/buner-3.png" alt="">
+        </div>
+        <div class="flora-buner flora-buner--4" data-scroll data-scroll-speed="3">
+          <img src="img/work/flora/buner-4.png" alt="">
+        </div>
       </section>
+
     </div>
+
+    <!-- Park Japan Garden -->
     <div class="work-wrapper" data-scroll-section>
-      <section class="work park">
+      <div class="work-fixed-target" id="park-fixed-target"></div>
+
+      <section class="work park" data-scroll data-scroll-sticky data-scroll-target="#park-fixed-target">
         <div class="container flex">
-          <div class="work__content">
+          <div class="work__content" data-scroll data-scroll-speed="2">
             <div class="work__title park__title mb-10">
               Инфомат <br>
               в парке <img src="img/work/park/title-icon.png" alt=""> <br>
@@ -210,11 +256,46 @@
             <div class="mb-10"></div>
             <button class="btn btn--text btn--contur">Смотреть сайт</button>
           </div>
-          <div class="work__preview flex-self-end" data-scroll>
+          <div class="work__preview flex-self-end" data-scroll data-scroll-speed="-2">
             <img src="img/work/park/preview.jpg" alt="">
           </div>
         </div>
       </section>
+    </div>
+
+    <!-- Kravchenko Place -->
+    <div class="work-wrapper" data-scroll-section>
+      <div class="work-fixed-target" id="krav-fixed-target"></div>
+
+      <section class="work krav" data-scroll data-scroll-sticky data-scroll-target="#krav-fixed-target">
+        <div class="container flex">
+          <div class="work__content" data-scroll data-scroll-speed="2">
+            <div class="work__title krav__title mb-10">
+              Kravchenko <br>
+              Place <img src="img/work/krav/title-icon.png" alt=""> <br>
+
+            </div>
+            <div class="lh-1-5 mb-10">
+              Эстетика, современный стиль, комфорт – все это <br>
+              про наше место отдыха. <br>
+              Приезжайте и наслаждайтесь <br>
+              спокойным отдыхом в приятном окружении!
+            </div>
+            <div class="text-subtitle-1 lh-1-5">
+              Разработка <span class="fade-40">сайта</span> <br>
+              Продвижение <span class="fade-40">в топ</span> <br>
+              Техническая поддержка
+            </div>
+            <div class="mb-10"></div>
+            <div class="mb-10"></div>
+            <button class="btn btn--white btn--contur">Смотреть сайт</button>
+          </div>
+          <div class="work__preview flex-self-end" data-scroll data-scroll-speed="-2">
+            <img src="img/work/krav/preview.jpg" alt="">
+          </div>
+        </div>
+      </section>
+
     </div>
 
     <section class="partners" data-scroll-section>

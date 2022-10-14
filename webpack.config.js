@@ -39,7 +39,13 @@ function generateCopyPlugins(templateDir) {
     return { from: `${templateDir}/${name}.${extension}`, to: `./${name}.${extension}` }
   }).filter((item) => item !== null)
 }
-
+const cssLoader = {
+  loader: "css-loader",
+  options: {
+    // Add this option
+    url: false,
+  },
+}
 module.exports = {
   entry: './src/index.js',
   resolve: {
@@ -69,8 +75,8 @@ module.exports = {
           filename: 'fonts/[name][ext]'
         }
       },
-      { test: /\.css$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'] },
-      { test: /\.s[ac]ss$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'] },
+      { test: /\.css$/, use: [MiniCssExtractPlugin.loader, cssLoader, 'postcss-loader'] },
+      { test: /\.s[ac]ss$/, use: [MiniCssExtractPlugin.loader, cssLoader, 'postcss-loader', 'sass-loader'] },
       {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
