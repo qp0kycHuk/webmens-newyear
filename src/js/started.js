@@ -17,7 +17,7 @@ const images = [
 let img = images[0];
 
 
-let isOver = false;
+let isOver = true;
 
 // init properties of round image
 const rect = {
@@ -121,10 +121,6 @@ function mousemoveHandler(event) {
   }
 }
 
-
-
-
-
 function followMouse() {
   key = requestAnimationFrame(followMouse);
 
@@ -164,13 +160,18 @@ function followMouse() {
     target.height = rect.height
   }
 
-  if(!isOver){
-    target.width = 0
-    target.height = 0
+  if (!isOver) {
+    target.width = target.height = 0
+    coof.width = coof.height = 0.075
+  }
+
+  if (current.width == 0) {
+    current.x = false
+    current.y = false
   }
 
   ['x', 'y', 'width', 'height'].forEach((key) => {
-    if (!current[key]) {
+    if (current[key] === false) {
       current[key] = target[key];
     }
 
@@ -186,7 +187,6 @@ function followMouse() {
   draw(current)
 
 }
-
 
 function draw(options) {
   const position = {
@@ -212,9 +212,9 @@ function draw(options) {
 function mouseleaveHandler(event) {
   console.log('leave', event.target);
   setTimeout(() => {
-    // target.x = rect.x
-    // target.y = rect.y
-    
+    // target.x = false
+    // target.y = false
+
     isOver = false
   }, 100)
 }

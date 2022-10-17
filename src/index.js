@@ -5,6 +5,7 @@ import theme from './js/theme';
 import inputmask from "./js/inputmask";
 import scrollTo from "./js/scrollTo";
 import started from "./js/started";
+import lightening from "./js/lightening";
 import tab from 'npm-kit-tab';
 import toggle from 'npm-kit-toggle';
 import ripple from 'npm-kit-ripple';
@@ -21,9 +22,11 @@ import './scss/index.scss';
 window.ripple = ripple
 window.addEventListener('DOMContentLoaded', () => loadHandler())
 
+let scroll;
+
 window.addEventListener('load', () => {
 	document.body.classList.add('loaded')
-	const scroll = new LocomotiveScroll({
+	scroll = new LocomotiveScroll({
 		el: document.querySelector('[data-scroll-container]'),
 		smooth: true,
 		lerp: 0.05,
@@ -35,9 +38,6 @@ window.addEventListener('load', () => {
 
 
 function loadHandler() {
-
-
-
 	fancybox.init()
 	showPass.init()
 	scrollTo.init()
@@ -47,6 +47,7 @@ function loadHandler() {
 	ripple.init()
 	theme.init()
 	inputmask.init(document)
+	lightening.init()
 	started.init()
 
 	ripple.attach('.btn')
@@ -114,6 +115,10 @@ function reload() {
 function clickHandler(event) {
 	if (event.target.closest('[data-add-favorite]')) {
 		addFavorite()
+	}
+	if (event.target.closest('[data-scroll-to]')) {
+		const id = event.target.closest('[data-scroll-to]').getAttribute('data-scroll-to')
+		scroll.scrollTo(id)
 	}
 
 	if (event.target.closest('[data-share]')) {
