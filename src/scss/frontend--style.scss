@@ -897,13 +897,13 @@ body:not(.loaded) .started {
 
 		&--1 {
 			left       : 0;
-			bottom     : -200px;
+			bottom     : -150px;
 			padding-top: 100vh;
 		}
 
 		&--2 {
 			right      : 0;
-			bottom     : -200px;
+			bottom     : -150px;
 			padding-top: 100vh;
 			z-index    : 3;
 		}
@@ -914,8 +914,8 @@ body:not(.loaded) .started {
 		}
 
 		&--4 {
-			right : 40%;
-			bottom: 0;
+			right : 45%;
+			bottom: 40px;
 		}
 	}
 }
@@ -930,6 +930,45 @@ body:not(.loaded) .started {
 		background-clip        : text;
 		text-fill-color        : transparent;
 	}
+
+	&-buner {
+		position      : absolute;
+		pointer-events: none;
+
+		&--1 {
+			left   : 25%;
+			bottom : 60px;
+			z-index: 2;
+		}
+
+		&--2 {
+			left  : 27%;
+			bottom: 0;
+		}
+
+		&--3 {
+			right  : 0;
+			bottom : 120px;
+			z-index: 3;
+		}
+
+		&--4 {
+			right  : 0;
+			bottom : 60px;
+			z-index: 2;
+		}
+
+		&--5 {
+			right : 0;
+			bottom: 0;
+		}
+
+		&--6 {
+			right  : 0;
+			bottom : 0;
+			z-index: 1;
+		}
+	}
 }
 
 .krav {
@@ -942,6 +981,35 @@ body:not(.loaded) .started {
 		-webkit-text-fill-color: transparent;
 		background-clip        : text;
 		text-fill-color        : transparent;
+	}
+
+	&-buner {
+		position      : absolute;
+		pointer-events: none;
+
+		&--1 {
+			left   : 0;
+			bottom : 120px;
+			z-index: 3;
+		}
+
+		&--2 {
+			right  : 0;
+			bottom : 120px;
+			z-index: 3;
+		}
+
+		&--3 {
+			bottom : 284px;
+			left   : 40%;
+			z-index: 2;
+		}
+
+		&--4 {
+			bottom : -40px;
+			right  : 40px;
+			z-index: 2;
+		}
 	}
 }
 

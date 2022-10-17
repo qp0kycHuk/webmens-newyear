@@ -30,8 +30,8 @@ const rect = {
 // current properties of object
 // change in request animation frame
 const current = {
-  width: rect.width,
-  height: rect.height
+  width: 0,
+  height: 0
 }
 
 // target properties for object
@@ -164,6 +164,11 @@ function followMouse() {
     target.height = rect.height
   }
 
+  if(!isOver){
+    target.width = 0
+    target.height = 0
+  }
+
   ['x', 'y', 'width', 'height'].forEach((key) => {
     if (!current[key]) {
       current[key] = target[key];
@@ -207,8 +212,9 @@ function draw(options) {
 function mouseleaveHandler(event) {
   console.log('leave', event.target);
   setTimeout(() => {
-    target.x = rect.x
-    target.y = rect.y
+    // target.x = rect.x
+    // target.y = rect.y
+    
     isOver = false
   }, 100)
 }
