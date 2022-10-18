@@ -20,7 +20,12 @@
 
 <body class="scroll-top">
   <header class="header">
-    <a href="javascript:;" class="header-logo">
+    <button class="btn btn--text btn-icon mr-4 d-md-none" style="--size:32px" data-toggle-link="menu">
+      <svg class="icon">
+        <use xlink:href="img/icons.svg#menu" />
+      </svg>
+    </button>
+    <a href="javascript:;" class="header-logo mr-auto mr-md-0">
       <div class="header-logo__img">
         <img src="img/header-logo-img.svg" alt="">
       </div>
@@ -33,18 +38,62 @@
       <button class="header-nav__item" data-scroll-to="#flora">Портфолио</button>
       <a href="" class="header-nav__item">Контакты</a>
     </div>
-    <a href="" class="header__phone">+7 (918) 317-99-73</a>
+    <a href="" class="header__phone link-hover">+7 (918) 317-99-73</a>
   </header>
-  <div class="background-wrapper">
-    <div class="background animate__animated animate__fadeIn">
-      <div class="background-item background-item--1"></div>
-      <div class="background-item background-item--2"></div>
-      <div class="background-item background-item--3"></div>
-      <div class="background-item background-item--4"></div>
+
+  <div class="menu -menu-" id="menu">
+    <div class="menu-header">
+      <button class="header-btn btn btn-xsmall btn-icon btn--text mr-4" data-toggle-link="menu" style="--size:32px">
+        <svg class="icon">
+          <use xlink:href="img/icons.svg#cross" />
+        </svg>
+      </button>
+      <a href="javascript:;" class="header-logo mr-auto mr-md-0">
+        <div class="header-logo__img">
+          <img src="img/header-logo-img.svg" alt="">
+        </div>
+        <div class="header-logo__text">
+          Веб-студия КИТ
+        </div>
+      </a>
+    </div>
+    <div class="menu-content">
+      <div class="py-5 pb-3">
+        <a href="javascipt:;" class="d-block px-4 py-4 waved text-body-1 w-100">
+          Услуги
+        </a>
+        <a href="javascipt:;" class="d-block px-4 py-4 waved text-body-1 w-100" data-scroll-to="#flora" data-toggle-link="menu">
+          Портфолио
+        </a>
+        <a href="javascipt:;" class="d-block px-4 py-4 waved text-body-1 w-100">
+          Контакты
+        </a>
+
+
+      </div>
+      <div class="px-4 mt-1 mt-auto">
+        <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link link-hover">ул.Рождественская Набережная
+          45/1</a>
+        <a href="javascript:;" class="text-subtitle-2 fade-80 mb-5 btn btn--link link-hover">+7 (918) 317-99-73</a>
+        <a href="javascript:;" class="text-subtitle-2 fade-80 mb-5 btn btn--link link-hover">info@stdkit.ru</a>
+      </div>
+      <div class="mt-10 px-4">
+        <button class="btn btn--text btn--contur mt-4 w-100 text-body-2 text--demibold">Заказать звонок</button>
+      </div>
     </div>
   </div>
+  <div class="menu-shadow" id="menu-shadow"></div>
+
   <div data-scroll-container>
     <section class="started code-cursor-cover" data-scroll-section>
+      <div class="background-wrapper">
+        <div class="background animate__animated animate__fadeIn">
+          <div class="background-item background-item--1"></div>
+          <div class="background-item background-item--2"></div>
+          <div class="background-item background-item--3"></div>
+          <div class="background-item background-item--4"></div>
+        </div>
+      </div>
 
       <div class="started-inner">
         <div class="started__logo-wrapper">
@@ -68,7 +117,7 @@
 
     <section class="index-service" data-scroll-section id="service">
       <div class="index-service-grid">
-        <div class="index-service-item index-service-item--purple -lightening-">
+        <div class="index-service-item index-service-item--purple -lightening- mobile-fade-in-down" data-scroll>
           <div class="index-service-item-video">
             <!-- <video src="media/service-hover-programming.mp4" muted autoplay loop></video> -->
           </div>
@@ -79,13 +128,13 @@
               или лендинга - это к нам
             </div>
             <div class="text-body-2 text-lg-body-0 text--center mt-auto mb-5 index-service-item-sign">
-              <a href="javascript:;">Корпоративный сайт</a> /
-              <a href="javascript:;">Интернет-магазин</a> /
+              <a href="javascript:;">Корпоративный сайт</a> <span>/</span>
+              <a href="javascript:;">Интернет-магазин</a> <span>/</span>
               <a href="javascript:;">Лендинг (Landing Page)</a>
             </div>
           </div>
         </div>
-        <div class="index-service-item index-service-item--blue -lightening-">
+        <div class="index-service-item index-service-item--blue -lightening- mobile-fade-in-down" data-scroll>
           <div class="index-service-item-video">
             <!-- <video src="media/service-hover-chart.webm" muted autoplay loop></video> -->
           </div>
@@ -96,13 +145,13 @@
               реклама - мы прокачаем ваш сайт
             </div>
             <div class="text-body-2 text-lg-body-0 text--center mt-auto mb-5 index-service-item-sign">
-              <a href="javascript:;">Техническая поддержка</a> /
-              <a href="javascript:;">SEO-продвижение</a> /
+              <a href="javascript:;">Техническая поддержка</a> <span>/</span>
+              <a href="javascript:;">SEO-продвижение</a> <span>/</span>
               <a href="javascript:;">Контекстная реклама</a>
             </div>
           </div>
         </div>
-        <div class="index-service-item index-service-item--orange -lightening-">
+        <div class="index-service-item index-service-item--orange -lightening- mobile-fade-in-down" data-scroll>
           <div class="index-service-item-video">
             <!-- <video src="media/service-hover-marketing.webm" muted autoplay loop></video> -->
           </div>
@@ -113,13 +162,13 @@
               до администрирования
             </div>
             <div class="text-body-2 text-lg-body-0 text--center mt-auto mb-5 index-service-item-sign">
-              <a href="javascript:;">Дизайн и креатив</a> /
-              <a href="javascript:;">Оформление аккаунта</a> /
+              <a href="javascript:;">Дизайн и креатив</a> <span>/</span>
+              <a href="javascript:;">Оформление аккаунта</a> <span>/</span>
               <a href="javascript:;">Администрирование</a>
             </div>
           </div>
         </div>
-        <div class="index-service-item index-service-item--green -lightening-">
+        <div class="index-service-item index-service-item--green -lightening- mobile-fade-in-down" data-scroll>
           <div class="index-service-item-video">
             <!-- <video src="media/service-hover-app.webm" muted autoplay loop></video> -->
           </div>
@@ -131,8 +180,8 @@
               до администрирования
             </div>
             <div class="text-body-2 text-lg-body-0 text--center mt-auto mb-5 index-service-item-sign">
-              <a href="javascript:;">Корпоративный сайт</a> /
-              <a href="javascript:;">Интернет-магазин</a> /
+              <a href="javascript:;">Корпоративный сайт</a> <span>/</span>
+              <a href="javascript:;">Интернет-магазин</a> <span>/</span>
               <a href="javascript:;">Лендинг (Landing Page)</a>
             </div>
           </div>
@@ -165,13 +214,13 @@
           интернет-ресурс <div class="nothing-rocket" data-scroll><img src="img/rocket.png" alt=""></div>
 
         </div>
-        <div class="nothing__subtitle" data-scroll data-scroll-delay="0.1" data-scroll-speed="2">
+        <div class="nothing__subtitle mobile-fade-in-down" data-scroll data-scroll-delay="0.1" data-scroll-speed="2">
           Наша работа находится на стыке творчества и технологий
           <span>
             Можете посмотреть наши лучшие работы
           </span>
         </div>
-        <div class="flex" data-scroll data-scroll-delay="0.05" data-scroll-speed="2.5" data-scroll-to="#flora">
+        <div class="flex mobile-fade-in-down" data-scroll data-scroll-delay="0.05" data-scroll-speed="2.5" data-scroll-to="#flora">
           <button class="nothing__btn btn btn--text btn--contur">
             <svg class="icon">
               <use xlink:href="img/icons.svg#to-down" />
@@ -186,25 +235,27 @@
       <div class="work-fixed-target" id="flora-fixed-target"></div>
 
       <section class="work flora" data-scroll data-scroll-sticky data-scroll-target="#flora-fixed-target">
-        <div class="container flex">
+        <div class="container work__container">
           <div class="work__content" data-scroll data-scroll-speed="2">
-            <div class="work__title flora__title mb-10 ">
+            <div class="work__title flora__title mb-10 " data-scroll>
               Магазин цветов <br>
               Флора <img src="img/work/flora/title-icon.png" alt="">
             </div>
-            <div class="lh-1-5 mb-5 mb-lg-10 text-body-2 text-lg-body-1">
+            <div class="lh-1-5 mb-5 mb-lg-10 work__subtitle mobile-fade-in-down text-body-2 text-lg-body-1" data-scroll>
               Интернет-магазин цветов «Флора» предлагает <br>
               уникальные букеты живых цветов собранные по всем <br>
               правилам флористики
             </div>
-            <div class="text-subtitle-2 text-lg-subtitle-1 lh-1-5 ">
+            <div class="text-subtitle-2 text-lg-subtitle-1 lh-1-5 work__sign mobile-fade-in-down " data-scroll>
               Разработка <span class="fade-40">сайта</span> <br>
               Продвижение <span class="fade-40">в топ</span> <br>
               Техническая поддержка
             </div>
             <div class="mb-10"></div>
             <div class="mb-lg-10"></div>
-            <button class="btn btn--text btn--contur">Смотреть сайт</button>
+            <div class="mobile-fade-in-down flex" data-scroll>
+              <button class="btn btn--text btn--contur">Смотреть сайт</button>
+            </div>
           </div>
           <div class="work__preview flex-self-end" data-scroll data-scroll-speed="-2">
             <img src="img/work/flora/preview.jpg" alt="">
@@ -231,27 +282,29 @@
       <div class="work-fixed-target" id="park-fixed-target"></div>
 
       <section class="work park" data-scroll data-scroll-sticky data-scroll-target="#park-fixed-target">
-        <div class="container flex">
+        <div class="container work__container">
           <div class="work__content" data-scroll data-scroll-speed="2">
-            <div class="work__title park__title mb-10">
+            <div class="work__title park__title mb-10" data-scroll>
               Инфомат <br>
               в парке <img src="img/work/park/title-icon.png" alt=""> <br>
               Краснодар
             </div>
-            <div class="lh-1-5 mb-5 mb-lg-10" text-body-2 text-lg-body-1>
+            <div class="lh-1-5 mb-5 mb-lg-10 work__subtitle mobile-fade-in-down text-body-2 text-lg-body-1" data-scroll>
               Эстетика, современный стиль, комфорт – все это <br>
               про наше место отдыха. <br>
               Приезжайте и наслаждайтесь <br>
               спокойным отдыхом в приятном окружении!
             </div>
-            <div class="text-subtitle-2 text-lg-subtitle-1 lh-1-5">
+            <div class="text-subtitle-2 text-lg-subtitle-1 lh-1-5 work__sign mobile-fade-in-down" data-scroll>
               Разработка <span class="fade-40">сайта</span> <br>
               Продвижение <span class="fade-40">в топ</span> <br>
               Техническая поддержка
             </div>
             <div class="mb-10"></div>
             <div class="mb-lg-10"></div>
-            <button class="btn btn--text btn--contur">Смотреть сайт</button>
+            <div class="mobile-fade-in-down flex" data-scroll>
+              <button class="btn btn--text btn--contur">Смотреть сайт</button>
+            </div>
           </div>
           <div class="work__preview flex-self-end" data-scroll data-scroll-speed="-2">
             <img src="img/work/park/preview.jpg" alt="">
@@ -283,27 +336,29 @@
       <div class="work-fixed-target" id="krav-fixed-target"></div>
 
       <section class="work krav" data-scroll data-scroll-sticky data-scroll-target="#krav-fixed-target">
-        <div class="container flex">
+        <div class="container work__container">
           <div class="work__content" data-scroll data-scroll-speed="2">
-            <div class="work__title krav__title mb-10">
+            <div class="work__title krav__title mb-10" data-scroll>
               Kravchenko <br>
               Place <img src="img/work/krav/title-icon.png" alt=""> <br>
 
             </div>
-            <div class="lh-1-5 mb-5 mb-lg-10" text-body-2 text-lg-body-1>
+            <div class="lh-1-5 mb-5 mb-lg-10 work__subtitle mobile-fade-in-down text-body-2 text-lg-body-1" data-scroll>
               Эстетика, современный стиль, комфорт – все это <br>
               про наше место отдыха. <br>
               Приезжайте и наслаждайтесь <br>
               спокойным отдыхом в приятном окружении!
             </div>
-            <div class="text-subtitle-2 text-lg-subtitle-1 lh-1-5">
+            <div class="text-subtitle-2 text-lg-subtitle-1 lh-1-5 work__sign mobile-fade-in-down" data-scroll>
               Разработка <span class="fade-40">сайта</span> <br>
               Продвижение <span class="fade-40">в топ</span> <br>
               Техническая поддержка
             </div>
             <div class="mb-10"></div>
             <div class="mb-lg-10"></div>
-            <button class="btn btn--white btn--contur">Смотреть сайт</button>
+            <div class="mobile-fade-in-down flex" data-scroll>
+              <button class="btn btn--white btn--contur">Смотреть сайт</button>
+            </div>
           </div>
           <div class="work__preview flex-self-end" data-scroll data-scroll-speed="-2">
             <img src="img/work/krav/preview.jpg" alt="">
@@ -331,7 +386,7 @@
 
       <div class="partners-grid">
 
-        <div class="partners-item">
+        <div class="partners-item mobile-fade-in-down" data-scroll>
           <div class="partners-item__img">
             <img src="img/partners/kubsau.png" alt="">
           </div>
@@ -342,7 +397,7 @@
           </div>
         </div>
 
-        <div class="partners-item">
+        <div class="partners-item mobile-fade-in-down" data-scroll>
           <div class="partners-item__img">
             <img src="img/partners/rosseti.png" alt="">
           </div>
@@ -353,7 +408,7 @@
           </div>
         </div>
 
-        <div class="partners-item">
+        <div class="partners-item mobile-fade-in-down" data-scroll>
           <div class="partners-item__img">
             <img src="img/partners/matsesta.png" alt="">
           </div>
@@ -364,7 +419,7 @@
           </div>
         </div>
 
-        <div class="partners-item">
+        <div class="partners-item mobile-fade-in-down" data-scroll>
           <div class="partners-item__img">
             <img src="img/partners/park-krasnodar.png" alt="">
           </div>
@@ -375,7 +430,7 @@
           </div>
         </div>
 
-        <div class="partners-item">
+        <div class="partners-item mobile-fade-in-down" data-scroll>
           <div class="partners-item__img">
             <img src="img/partners/kkx.png" alt="">
           </div>
@@ -387,7 +442,7 @@
           </div>
         </div>
 
-        <div class="partners-item">
+        <div class="partners-item mobile-fade-in-down" data-scroll>
           <div class="partners-item__img">
             <img src="img/partners/gk.png" alt="">
           </div>
@@ -398,7 +453,7 @@
           </div>
         </div>
 
-        <div class="partners-item">
+        <div class="partners-item mobile-fade-in-down" data-scroll>
           <div class="partners-item__img">
             <img src="img/partners/krav.png" alt="">
           </div>
@@ -409,7 +464,7 @@
           </div>
         </div>
 
-        <div class="partners-item">
+        <div class="partners-item mobile-fade-in-down" data-scroll>
           <div class="partners-item__img">
             <img src="img/partners/rsmliga.png" alt="">
           </div>
@@ -420,7 +475,7 @@
           </div>
         </div>
 
-        <div class="partners-item">
+        <div class="partners-item mobile-fade-in-down" data-scroll>
           <div class="partners-item__img">
             <img src="img/partners/new-kuban.png" alt="">
           </div>
@@ -431,7 +486,7 @@
           </div>
         </div>
 
-        <div class="partners-item">
+        <div class="partners-item mobile-fade-in-down" data-scroll>
           <div class="partners-item__img">
             <img src="img/partners/dompodbor.png" alt="">
           </div>
@@ -442,7 +497,7 @@
           </div>
         </div>
 
-        <div class="partners-item">
+        <div class="partners-item mobile-fade-in-down" data-scroll>
           <div class="partners-item__img">
             <img src="img/partners/konditer.png" alt="">
           </div>
@@ -453,7 +508,7 @@
           </div>
         </div>
 
-        <div class="partners-item">
+        <div class="partners-item mobile-fade-in-down" data-scroll>
           <div class="partners-item__img">
             <img src="img/partners/flora.png" alt="">
           </div>
@@ -470,34 +525,35 @@
       <div class="footer-top">
         <div class="footer-nav">
           <div class="text-body-0 text--demibold mb-6">Разработка сайта</div>
-          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link">Корпоративный сайт</a>
-          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link">Интернет-магазин</a>
-          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link">Landing Page</a>
+          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link link-hover">Корпоративный сайт</a>
+          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link link-hover">Интернет-магазин</a>
+          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link link-hover">Landing Page</a>
         </div>
         <div class="footer-nav">
           <div class="text-body-0 text--demibold mb-6">Работа с сайтом</div>
-          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link">Техническая поддержка</a>
-          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link">SEO-продвижение</a>
-          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link">Контекстная реклама</a>
+          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link link-hover">Техническая поддержка</a>
+          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link link-hover">SEO-продвижение</a>
+          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link link-hover">Контекстная реклама</a>
         </div>
         <div class="footer-nav">
           <div class="text-body-0 text--demibold mb-6">Ведение соцсетей</div>
-          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link">Оформление аккаунта</a>
-          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link">Администрирование</a>
-          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link">Дизайн и креатив</a>
+          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link link-hover">Оформление аккаунта</a>
+          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link link-hover">Администрирование</a>
+          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link link-hover">Дизайн и креатив</a>
         </div>
         <div class="footer-nav">
           <div class="text-body-0 text--demibold mb-6">Ведение соцсетей</div>
-          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link">Оформление аккаунта</a>
-          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link">Администрирование</a>
-          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link">Дизайн и креатив</a>
+          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link link-hover">Оформление аккаунта</a>
+          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link link-hover">Администрирование</a>
+          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link link-hover">Дизайн и креатив</a>
         </div>
         <div class="footer-top__separator"></div>
-        <div class="footer-nav">
+        <div class="footer-nav footer-contacts">
           <div class="text-body-0 text--demibold mb-6">Контакты</div>
-          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link">ул.Рождественская Набережная 45/1</a>
-          <a href="javascript:;" class="text-subtitle-2 fade-80 mb-5 btn btn--link">+7 (918) 317-99-73</a>
-          <a href="javascript:;" class="text-subtitle-2 fade-80 mb-5 btn btn--link">info@stdkit.ru</a>
+          <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link link-hover">ул.Рождественская Набережная
+            45/1</a>
+          <a href="javascript:;" class="text-subtitle-2 fade-80 mb-5 btn btn--link link-hover">+7 (918) 317-99-73</a>
+          <a href="javascript:;" class="text-subtitle-2 fade-80 mb-5 btn btn--link link-hover">info@stdkit.ru</a>
         </div>
       </div>
 
@@ -508,12 +564,12 @@
       </div>
 
 
-      <div class="flex">
+      <div class="footer-bottom">
         <img src="img/timeweb.png" alt="" class="mr-4 d-block">
         <img src="img/bitrix.png" alt="" class="mr-4 d-block">
         <img src="img/direct.png" alt="" class="mr-4 d-block">
         <img src="img/bitrix24.png" alt="" class="mr-4 d-block">
-        <div class="ml-auto text-body-2 text--medium">/ ООО “Студия КИТ” © 2022</div>
+        <div class="ml-auto text-body-2 text--medium w-100 w-md-auto mt-5 mt-md-auto">/ ООО “Студия КИТ” © 2022</div>
       </div>
     </footer>
 

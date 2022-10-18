@@ -26,10 +26,16 @@ let scroll;
 
 window.addEventListener('load', () => {
 	document.body.classList.add('loaded')
+
 	scroll = new LocomotiveScroll({
 		el: document.querySelector('[data-scroll-container]'),
 		smooth: true,
 		lerp: 0.05,
+		touchMultiplier: 4,
+		tablet: {
+			smooth: true,
+			breakpoint: 749.98
+		}
 		// offset: [-1200, -1200]
 	});
 
@@ -59,7 +65,8 @@ function loadHandler() {
 
 
 
-
+	window.addEventListener('toggleopen', toggleopenHaandler)
+	window.addEventListener('toggleclose', togglecloseHaandler)
 }
 
 function scrollHandler(event) {
@@ -70,6 +77,17 @@ function scrollHandler(event) {
 	}
 }
 
+function toggleopenHaandler(event) {
+	if (event.detail.target.classList.contains('-menu-')) {
+		document.body.classList.add('menu-open')
+	}
+}
+
+function togglecloseHaandler(event) {
+	if (event.detail.target.classList.contains('-menu-')) {
+		document.body.classList.remove('menu-open')
+	}
+}
 
 // functions for emulate brauser actions in plug page
 function addFavorite() {
