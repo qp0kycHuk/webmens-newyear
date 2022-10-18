@@ -1,0 +1,45 @@
+<%= _.template(require('./html-includes/header.html').default)() %>
+
+    <section class="contact-page" data-scroll-section>
+        <div class="contact-page-map" id="map">
+
+        </div>
+        <div class="contact-page-content">
+            <div class="contact-page__title">Наши контакты</div>
+            <div class="contact-page__address flex flex-align-center">
+                <svg class="icon">
+                    <use xlink:href="img/icons.svg#address" />
+                </svg>
+                <div>
+                    350089, г.Краснодар, <br>
+                    ул. Рождественская набережная 45/1
+                </div>
+            </div>
+            <div class="contact-page__phone flex flex-align-center mt-4 link-hover-wrapper">
+                <svg class="icon">
+                    <use xlink:href="img/icons.svg#phone" />
+                </svg>
+                <span class="link-hover">
+                    +7 (918) 317-99-73
+                </span>
+            </div>
+            <div class="contact-page__separator"></div>
+
+            <div class="contact-page__email contact-page__email--blue link-hover-wrapper">
+                <div class="contact-page__email-sign">Нужен сайт</div>
+                <span class="link-hover"> info@stdkit.ru </span>
+            </div>
+            <div class="contact-page__email contact-page__email--green link-hover-wrapper">
+                <div class="contact-page__email-sign">Хочу сотрудничать</div>
+                <span class="link-hover"> cooperation@stdkit.ru </span>
+            </div>
+            <div class="contact-page__email contact-page__email--red link-hover-wrapper">
+                <div class="contact-page__email-sign">Я практикант</div>
+                <span class="link-hover"> prakrica@stdkit.ru </span>
+            </div>
+
+            <button class="contact-page__btn btn btn--text btn--contur">У меня есть вопрос</button>
+        </div>
+    </section>
+
+<%= _.template(require('./html-includes/footer.html').default)() %>

@@ -21,6 +21,12 @@ html.has-scroll-dragging {
     will-change: transform, opacity;
 }
 
+[data-scroll-container] {
+    display       : flex;
+    flex-direction: column;
+    flex-grow     : 1;
+}
+
 .has-scroll-smooth [data-scroll-container] {
     min-height: 100vh;
 }

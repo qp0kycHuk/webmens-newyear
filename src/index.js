@@ -11,7 +11,7 @@ import toggle from 'npm-kit-toggle';
 import ripple from 'npm-kit-ripple';
 // import Swiper, { Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade, Lazy } from 'swiper';
 import LocomotiveScroll from 'locomotive-scroll';
-
+import ymaps from 'ymaps';
 
 
 import './scss/index.scss';
@@ -23,6 +23,7 @@ window.ripple = ripple
 window.addEventListener('DOMContentLoaded', () => loadHandler())
 
 let scroll;
+let mapInited = false
 
 window.addEventListener('load', () => {
 	document.body.classList.add('loaded')
@@ -40,6 +41,8 @@ window.addEventListener('load', () => {
 	});
 
 	scroll.on('scroll', scrollHandler)
+
+	mapsInit()
 })
 
 
@@ -70,7 +73,7 @@ function loadHandler() {
 }
 
 function scrollHandler(event) {
-	if (event.scroll.y <= 40) {
+	if (event.scroll.y <= 10) {
 		document.body.classList.add('scroll-top')
 	} else {
 		document.body.classList.remove('scroll-top')
@@ -152,3 +155,39 @@ function clickHandler(event) {
 	}
 }
 
+function mapsInit() {
+	if (mapInited) return;
+	if (!document.getElementById('map')) return
+
+	mapInited = true
+	ymaps
+		.load()
+		.then(maps => {
+			const map = new maps.Map('map', {
+				center: [45.031910, (window.screen.width < MEDIA.lg ? 38.921172 : 38.915172)],
+				zoom: 16
+
+			})
+
+			const placemark = new maps.Placemark([45.031910, 38.921172], {}, {
+				iconLayout: 'default#image',
+				iconImageHref: '../img/geo.png',
+				iconImageSize: [68, 68],
+				iconImageOffset: [-34, -34]
+
+			})
+
+
+			map.controls.remove('geolocationControl')
+			map.controls.remove('searchControl')
+			map.controls.remove('trafficControl')
+			map.controls.remove('typeSelector')
+			map.controls.remove('fullscreenControl')
+			// map.controls.remove('zoomControl')
+			map.controls.remove('rulerControl')
+			map.behaviors.disable(['scrollZoom'])
+			map.geoObjects.add(placemark)
+			map.geoObjects.add(placemark_2)
+		})
+		.catch(error => console.log('Failed to load Yandex Maps', error));
+}

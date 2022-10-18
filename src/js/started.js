@@ -53,7 +53,12 @@ function init() {
 
   cover = document.querySelector('.started__logo-wrapper')
   canvas = document.querySelector('.code-cursor-wrapper canvas')
-  context = canvas.getContext("2d");
+  context = canvas?.getContext("2d");
+
+  if (!canvas) {
+    return;
+  }
+  
   setSizes()
 
   followMouse()

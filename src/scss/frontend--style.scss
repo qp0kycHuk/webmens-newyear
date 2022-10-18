@@ -51,7 +51,11 @@ body {
 	min-height    : 100vh;
 	display       : flex;
 	flex-direction: column;
+	padding-top   : 80px;
 
+	@media(max-width:$sm) {
+		padding-top: 60px;
+	}
 
 	* {
 		font-family: var(--font-base);
@@ -611,7 +615,7 @@ body:not(.loaded) .header {
 .started {
 	position      : relative;
 	isolation     : isolate;
-	padding-top   : 292px;
+	padding-top   : 212px;
 	padding-bottom: 150px;
 	display       : flex;
 	flex-direction: column;
@@ -620,7 +624,7 @@ body:not(.loaded) .header {
 
 
 	@media(max-width:$lg) {
-		padding-top   : 262px;
+		padding-top   : 182px;
 		padding-bottom: 100px;
 	}
 
@@ -658,7 +662,7 @@ body:not(.loaded) .header {
 		position      : relative;
 		z-index       : 3;
 
-		background: linear-gradient(276.58deg, rgba(230, 119, 255, 0.6) 5.64%, rgba(230, 119, 255, 0) 78.65%), #302B44;
+		background     : linear-gradient(276.58deg, rgba(230, 119, 255, 0.6) 5.64%, rgba(230, 119, 255, 0) 78.65%), #302B44;
 		background-size: 200% 100%;
 
 		mask      : url("../img/started-logo.svg") no-repeat center / contain;
@@ -1757,5 +1761,156 @@ body:not(.loaded) .started {
 			grid-column-end: span 2;
 		}
 
+	}
+}
+
+
+// contact-page -=::=--=::=--=::=--=::=--=::=--=::=--=::=--=::=-
+
+.contact-page {
+	position      : relative;
+	padding-top   : 52px;
+	padding-bottom: 52px;
+	flex-grow     : 1;
+
+	@media(max-width:$xs) {
+		padding-top: 10px;
+	}
+
+	&-content {
+		@media(min-width:$lg) {
+			width          : 528px;
+			padding        : 52px;
+			background     : radial-gradient(98.48% 326.98% at 0% 3.35%, rgba(255, 255, 255, 0.64) 0%, rgba(255, 255, 255, 0) 100%);
+			backdrop-filter: blur(21px);
+			border-radius  : 24px;
+
+		}
+	}
+
+	&-map {
+		background: url("../img/map-preview.jpg") no-repeat center / cover;
+		position  : absolute;
+		left      : 0;
+		top       : 0;
+		width     : 100%;
+		height    : 100%;
+
+		@media(max-width:$lg) {
+			position     : relative;
+			width        : 100%;
+			height       : 400px;
+			max-height   : 50vh;
+			border-radius: 24px;
+			overflow     : hidden;
+			margin-bottom: 40px;
+		}
+	}
+
+	&__title {
+		font-weight  : 600;
+		font-size    : 52px;
+		margin-bottom: 32px;
+
+		@media(max-width:$lg) {
+			font-size    : 44px;
+			margin-bottom: 1em;
+		}
+
+		@media(max-width:$md) {
+			font-size: 36px;
+		}
+
+		@media(max-width:$sm) {
+			font-size: 24px;
+		}
+	}
+
+	&__address,
+	&__phone {
+		.icon {
+			color       : var(--color-text-40);
+			font-size   : 20px;
+			margin-right: 16px;
+		}
+	}
+
+	&__address {
+		font-weight: 400;
+		font-size  : 20px;
+		color      : var(--color-text-80);
+
+		@media(max-width:$md) {
+			font-size: 16px;
+		}
+
+	}
+
+	&__phone {
+		font-weight: 700;
+		font-size  : 26px;
+
+		@media(max-width:$md) {
+			font-size: 20px;
+		}
+	}
+
+	&__email {
+
+		font-weight: 500;
+		font-size  : 26px;
+		display    : flex;
+		align-items: center;
+
+		@media(max-width:$md) {
+			font-size: 20px;
+		}
+
+		@media(max-width:$xs) {
+			flex-direction: column;
+			align-items   : stretch;
+		}
+
+		&+& {
+			margin-top: 24px;
+		}
+
+		&-sign {
+			border-radius: 300px;
+			margin-right : 12px;
+			font-weight  : 500;
+			font-size    : 14px;
+			padding      : 10px 20px;
+
+			@media(max-width:$xs) {
+				margin-right : 0;
+				margin-bottom: 8px;
+
+				width        : calc(100% + 30px);
+				border-radius: 0;
+				margin-left  : -15px;
+			}
+		}
+
+		&--blue &-sign {
+			background: #BED5FF;
+		}
+
+		&--green &-sign {
+			background: #B1EDB4;
+		}
+
+		&--red &-sign {
+			background: #F1CFCF;
+		}
+	}
+
+	&__separator {
+		border-bottom: 1px dashed #BDBDBD;
+		margin       : 40px 0;
+	}
+
+	&__btn {
+		margin-top: 58px;
 	}
 }
