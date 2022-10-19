@@ -103,7 +103,7 @@ module.exports = {
         { from: "./src/media/", to: "./media/" },
         { from: "./src/fonts/", to: "./fonts/" },
         { from: "./src/favicon/", to: "./favicon/" },
-        // ...generateCopyPlugins('./src/html-dialogs')
+        ...generateCopyPlugins('./src/html-dialogs')
       ],
     }),
   ],

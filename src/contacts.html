@@ -1,9 +1,8 @@
 <%= _.template(require('./html-includes/header.html').default)() %>
+<div class="page-top-placeholder"></div>
 
     <section class="contact-page" data-scroll-section>
-        <div class="contact-page-map" id="map">
-
-        </div>
+        <div class="contact-page-map" id="map">  </div>
         <div class="contact-page-content">
             <div class="contact-page__title">Наши контакты</div>
             <div class="contact-page__address flex flex-align-center">
@@ -38,8 +37,9 @@
                 <span class="link-hover"> prakrica@stdkit.ru </span>
             </div>
 
-            <button class="contact-page__btn btn btn--text btn--contur">У меня есть вопрос</button>
+            <button data-fancybox-modal data-type="ajax" data-src="dialog-form.html" 
+                class="contact-page__btn btn btn--text btn--contur">У меня есть вопрос</button>
         </div>
     </section>
 
-<%= _.template(require('./html-includes/footer.html').default)() %>
+    <%= _.template(require('./html-includes/footer.html').default)() %>
