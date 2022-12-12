@@ -20,6 +20,7 @@
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
+    "ignore-loader": "^0.1.2",
     "mini-css-extract-plugin": "^2.6.0",
     "postcss-loader": "^6.2.1",
     "raw-loader": "^4.0.2",
@@ -38,9 +39,11 @@
     "@fancyapps/ui": "^4.0.27",
     "animate.css": "^4.1.1",
     "inputmask": "^5.0.7",
+    "locomotive-scroll": "^4.1.4",
     "npm-kit-ripple": "^1.5.6",
     "npm-kit-tab": "^1.0.0",
     "npm-kit-toggle": "^1.1.0",
-    "swiper": "^8.2.4"
+    "swiper": "^8.2.4",
+    "ymaps": "^0.2.1"
   }
 }

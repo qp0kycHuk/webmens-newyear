@@ -2,11 +2,14 @@
 
 
 .link-hover {
-  cursor: pointer;
+  cursor               : pointer;
+  text-underline-offset: 4px;
 
   @media(hover) {
     &:hover {
       text-decoration: underline;
+      opacity        : 1;
+
     }
   }
 }
@@ -18,6 +21,7 @@
     &:hover {
       .link-hover {
         text-decoration: underline;
+        opacity        : 1;
       }
 
     }

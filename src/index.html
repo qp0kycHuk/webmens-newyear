@@ -1,211 +1,318 @@
-<!DOCTYPE html>
-<html lang="en">
+<%= _.template(require('./html-includes/header.html').default)({isIndex:true}) %>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Создание и продвижение сайтов в Краснодаре : Веб-студия КИТ</title>
-</head>
 
-<body>
-  <div class="background-wrapper">
-    <div class="background animate__animated animate__fadeIn">
-      <div class="background-item background-item--1"></div>
-      <div class="background-item background-item--2"></div>
-      <div class="background-item background-item--3"></div>
-      <div class="background-item background-item--4"></div>
-    </div>
-  </div>
-  <header class="header">
-    <div class="header-logo">
-      <div class="header-logo__img">
-        <img src="img/header-logo-img.svg" alt="">
-      </div>
-      <div class="header-logo__text">
-        Веб-студия КИТ
+
+  <section class="started code-cursor-cover" data-scroll-section>
+    <div class="background-wrapper">
+      <div class="background animate__animated animate__fadeIn">
+        <div class="background-item background-item--1"></div>
+        <div class="background-item background-item--2"></div>
+        <div class="background-item background-item--3"></div>
+        <div class="background-item background-item--4"></div>
       </div>
     </div>
-    <div class="header-nav">
-      <a href="" class="header-nav__item">Главная</a>
-      <a href="" class="header-nav__item">Услуги</a>
-      <a href="" class="header-nav__item">Портфолио</a>
-      <a href="" class="header-nav__item">Контакты</a>
-    </div>
-    <a href="" class="header__phone">+7 (918) 317-99-73</a>
-  </header>
-  <div class="code-cursor-cover">
 
-    <section class="started">
-
-      <div class="started__logo">
-        <img src="img/started-logo.svg" alt="">
+    <div class="started-inner">
+      <div class="started__logo-wrapper">
+        <div class="started__logo">
+          <img src="img/started-logo.svg" alt="">
+        </div>
       </div>
-      <div class="started__subtitle">Разработка и реклама сайтов</div>
-      <button class="started__btn btn btn--text btn--contur">Узнать как</button>
+      <div data-scroll data-scroll-speed="1.5">
+        <div class="started__subtitle">Разработка и реклама сайтов</div>
+      </div>
+      <div data-scroll data-scroll-speed="1.5">
+        <button class="started__btn btn btn--text btn--contur" data-scroll-to="#service">Узнать как</button>
+
+      </div>
 
       <div class="code-cursor-wrapper">
         <canvas></canvas>
       </div>
+    </div>
+  </section>
+
+  <section class="index-service" data-scroll-section id="service">
+    <div class="index-service-grid">
+      <div class="index-service-item index-service-item--purple -lightening- mobile-fade-in-down" data-scroll>
+        <div class="index-service-item-video">
+          <!-- <video src="media/service-hover-programming.mp4" muted autoplay loop></video> -->
+        </div>
+        <div class="index-service-item-content" data-scroll data-scroll-delay="0.05" data-scroll-speed="1.2">
+          <div class="text-h5 text-lg-h3 mb-7 text--center index-service-item-title">Разработка сайта</div>
+          <div class="fade-60 text-lg-body-0 text--center index-service-item-subtitle">
+            Разработка корпоративного сайта, интернет-магазина <br>
+            или лендинга - это к нам
+          </div>
+          <div class="text-body-2 text-lg-body-0 text--center mt-auto mb-5 index-service-item-sign">
+            <a href="javascript:;" data-fancybox-modal data-type="ajax" data-src="dialog-form.html" >Корпоративный сайт</a> <span>/</span>
+            <a href="javascript:;" data-fancybox-modal data-type="ajax" data-src="dialog-form.html" >Интернет-магазин</a> <span>/</span>
+            <a href="javascript:;" data-fancybox-modal data-type="ajax" data-src="dialog-form.html" >Лендинг (Landing Page)</a>
+          </div>
+        </div>
+      </div>
+      <div class="index-service-item index-service-item--blue -lightening- mobile-fade-in-down" data-scroll>
+        <div class="index-service-item-video">
+          <!-- <video src="media/service-hover-chart.webm" muted autoplay loop></video> -->
+        </div>
+        <div class="index-service-item-content" data-scroll data-scroll-delay="0.05" data-scroll-speed="1.2">
+          <div class="text-h5 text-lg-h3 mb-7 text--center index-service-item-title">Работа с сайтом</div>
+          <div class="fade-60 text-lg-body-0 text--center index-service-item-subtitle">
+            Техническая поддержка, SEO-продвижение и контекстная <br>
+            реклама - мы прокачаем ваш сайт
+          </div>
+          <div class="text-body-2 text-lg-body-0 text--center mt-auto mb-5 index-service-item-sign">
+            <a href="javascript:;" data-fancybox-modal data-type="ajax" data-src="dialog-form.html" >Техническая поддержка</a> <span>/</span>
+            <a href="javascript:;" data-fancybox-modal data-type="ajax" data-src="dialog-form.html" >SEO-продвижение</a> <span>/</span>
+            <a href="javascript:;" data-fancybox-modal data-type="ajax" data-src="dialog-form.html" >Контекстная реклама</a>
+          </div>
+        </div>
+      </div>
+      <div class="index-service-item index-service-item--orange -lightening- mobile-fade-in-down" data-scroll>
+        <div class="index-service-item-video">
+          <!-- <video src="media/service-hover-marketing.webm" muted autoplay loop></video> -->
+        </div>
+        <div class="index-service-item-content" data-scroll data-scroll-delay="0.05" data-scroll-speed="1.2">
+          <div class="text-h5 text-lg-h3 mb-7 text--center index-service-item-title">Продвижение сайта</div>
+          <div class="fade-60 text-lg-body-0 text--center index-service-item-subtitle">
+            Инстаграм для вашего бизнеса - от оформления <br>
+            до администрирования
+          </div>
+          <div class="text-body-2 text-lg-body-0 text--center mt-auto mb-5 index-service-item-sign">
+            <a href="javascript:;" data-fancybox-modal data-type="ajax" data-src="dialog-form.html" >Дизайн и креатив</a> <span>/</span>
+            <a href="javascript:;" data-fancybox-modal data-type="ajax" data-src="dialog-form.html" >Оформление аккаунта</a> <span>/</span>
+            <a href="javascript:;" data-fancybox-modal data-type="ajax" data-src="dialog-form.html" >Администрирование</a>
+          </div>
+        </div>
+      </div>
+      <div class="index-service-item index-service-item--green -lightening- mobile-fade-in-down" data-scroll>
+        <div class="index-service-item-video">
+          <!-- <video src="media/service-hover-app.webm" muted autoplay loop></video> -->
+        </div>
+        <div class="index-service-item-content" data-scroll data-scroll-delay="0.05" data-scroll-speed="1.2">
+          <div class="text-h5 text-lg-h3 mb-7 text--center index-service-item-title">Разработка веб-приложений и
+            систем</div>
+          <div class="fade-60 text-lg-body-0 text--center index-service-item-subtitle">
+            Инстаграм для вашего бизнеса - от оформления <br>
+            до администрирования
+          </div>
+          <div class="text-body-2 text-lg-body-0 text--center mt-auto mb-5 index-service-item-sign">
+            <a href="javascript:;" data-fancybox-modal data-type="ajax" data-src="dialog-form.html" >Корпоративный сайт</a> <span>/</span>
+            <a href="javascript:;" data-fancybox-modal data-type="ajax" data-src="dialog-form.html" >Интернет-магазин</a> <span>/</span>
+            <a href="javascript:;" data-fancybox-modal data-type="ajax" data-src="dialog-form.html" >Лендинг (Landing Page)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="nothing" data-scroll-section>
+    <div class="nothing-background">
+      <div class="nothing-background__item" data-scroll data-scroll-delay="0.25" data-scroll-speed="-2"></div>
+      <div class="nothing-background__item nothing-background__item--big" data-scroll data-scroll-delay="0.25"
+        data-scroll-speed="-2"></div>
+      <div class="nothing-background__item" data-scroll data-scroll-delay="0.25" data-scroll-speed="-2"></div>
+      <div class="nothing-background__item" data-scroll data-scroll-delay="0.25" data-scroll-speed="-2"></div>
+      <div class="nothing-background__item" data-scroll data-scroll-delay="0.25" data-scroll-speed="-2"></div>
+
+      <div class="nothing-background__item" data-scroll data-scroll-delay="0.25" data-scroll-speed="-2"></div>
+      <div class="nothing-background__item" data-scroll data-scroll-delay="0.25" data-scroll-speed="-2"></div>
+      <div class="nothing-background__item nothing-background__item--big" data-scroll data-scroll-delay="0.25"
+        data-scroll-speed="-2"></div>
+      <div class="nothing-background__item" data-scroll data-scroll-delay="0.25" data-scroll-speed="-2"></div>
+      <div class="nothing-background__item" data-scroll data-scroll-delay="0.25" data-scroll-speed="-2"></div>
+
+    </div>
+    <div class="nothing-content">
+      <div class="nothing__title" data-scroll data-scroll-delay="0.25" data-scroll-speed="1.5">
+        Реализуем все ваши <div class="nothing-lamp" data-scroll><img src="img/lamp.png" alt=""></div> идеи, <br>
+        превратив их <div class="nothing-money" data-scroll><img src="img/money.png" alt=""></div> в прибыльный <br>
+        интернет-ресурс <div class="nothing-rocket" data-scroll><img src="img/rocket.png" alt=""></div>
+
+      </div>
+      <div class="nothing__subtitle mobile-fade-in-down" data-scroll data-scroll-delay="0.1" data-scroll-speed="2">
+        Наша работа находится на стыке творчества и технологий
+        <span>
+          Можете посмотреть наши лучшие работы
+        </span>
+      </div>
+      <div class="flex mobile-fade-in-down" data-scroll data-scroll-delay="0.05" data-scroll-speed="2.5"
+        data-scroll-to="#flora">
+        <button class="nothing__btn btn btn--text btn--contur">
+          <svg class="icon">
+            <use xlink:href="img/icons.svg#to-down" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flora Norilsk -->
+  <div class="work-wrapper" data-scroll-section id="flora">
+    <div class="work-fixed-target" id="flora-fixed-target"></div>
+
+    <section class="work flora" data-scroll data-scroll-sticky data-scroll-target="#flora-fixed-target">
+      <div class="container work__container">
+        <div class="work__content" data-scroll data-scroll-speed="2">
+          <div class="work__title flora__title mb-10 " data-scroll>
+            Магазин цветов <br>
+            Флора <img src="img/work/flora/title-icon-min.png" alt="">
+          </div>
+          <div class="lh-1-5 mb-5 mb-lg-10 work__subtitle mobile-fade-in-down text-body-2 text-lg-body-1" data-scroll>
+            Интернет-магазин цветов «Флора» предлагает <br>
+            уникальные букеты живых цветов собранные по всем <br>
+            правилам флористики
+          </div>
+          <div class="text-subtitle-2 text-lg-subtitle-1 lh-1-5 work__sign mobile-fade-in-down " data-scroll>
+            Разработка <span class="fade-40">сайта</span> <br>
+            Продвижение <span class="fade-40">в топ</span> <br>
+            Техническая поддержка
+          </div>
+          <div class="mb-10"></div>
+          <div class="mb-lg-10"></div>
+          <div class="mobile-fade-in-down flex" data-scroll>
+            <button class="btn btn--text btn--contur" data-fancybox-modal data-type="ajax" data-src="dialog-form.html" >Хочу так же</button>
+          </div>
+        </div>
+        <div class="work__preview flex-self-end" data-scroll data-scroll-speed="-2">
+          <picture>
+            <source srcset="img/work/flora/preview-min.webp" type="image/webp">
+            <img src="img/work/flora/preview-min.jpg" alt="">
+          </picture>
+        </div>
+      </div>
+      <div class="flora-buner flora-buner--1" data-scroll data-scroll-speed="5">
+        <img src="img/work/flora/buner-1-min.png" alt="">
+      </div>
+      <div class="flora-buner flora-buner--2" data-scroll data-scroll-speed="4">
+        <img src="img/work/flora/buner-2-min.png" alt="">
+      </div>
+      <div class="flora-buner flora-buner--3" data-scroll data-scroll-speed="5">
+        <img src="img/work/flora/buner-3-min.png" alt="">
+      </div>
+      <div class="flora-buner flora-buner--4" data-scroll data-scroll-speed="3">
+        <img src="img/work/flora/buner-4-min.png" alt="">
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Park Japan Garden -->
+  <div class="work-wrapper" data-scroll-section>
+    <div class="work-fixed-target" id="park-fixed-target"></div>
+
+    <section class="work park" data-scroll data-scroll-sticky data-scroll-target="#park-fixed-target">
+      <div class="container work__container">
+        <div class="work__content" data-scroll data-scroll-speed="2">
+          <div class="work__title park__title mb-10" data-scroll>
+            Инфомат <br>
+            в парке <img src="img/work/park/title-icon-min.png" alt=""> <br>
+            Краснодар
+          </div>
+          <div class="lh-1-5 mb-5 mb-lg-10 work__subtitle mobile-fade-in-down text-body-2 text-lg-body-1" data-scroll>
+            Эстетика, современный стиль, комфорт – все это <br>
+            про наше место отдыха. <br>
+            Приезжайте и наслаждайтесь <br>
+            спокойным отдыхом в приятном окружении!
+          </div>
+          <div class="text-subtitle-2 text-lg-subtitle-1 lh-1-5 work__sign mobile-fade-in-down" data-scroll>
+            Разработка <span class="fade-40">сайта</span> <br>
+            Продвижение <span class="fade-40">в топ</span> <br>
+            Техническая поддержка
+          </div>
+          <div class="mb-10"></div>
+          <div class="mb-lg-10"></div>
+          <div class="mobile-fade-in-down flex" data-scroll>
+            <button class="btn btn--text btn--contur" data-fancybox-modal data-type="ajax" data-src="dialog-form.html" >Хочу так же</button>
+          </div>
+        </div>
+        <div class="work__preview flex-self-end" data-scroll data-scroll-speed="-2">
+          <picture>
+            <source srcset="img/work/park/preview-min.webp" type="image/webp">
+            <img src="img/work/park/preview-min.jpg" alt="">
+          </picture>
+        </div>
+      </div>
+      <div class="park-buner park-buner--1" data-scroll data-scroll-speed="4">
+        <img src="img/work/park/buner-1-min.png" alt="">
+      </div>
+      <div class="park-buner park-buner--2" data-scroll data-scroll-speed="2">
+        <img src="img/work/park/buner-2-min.png" alt="">
+      </div>
+      <div class="park-buner park-buner--3" data-scroll data-scroll-speed="8">
+        <img src="img/work/park/buner-3-min.png" alt="">
+      </div>
+      <div class="park-buner park-buner--4" data-scroll data-scroll-speed="6">
+        <img src="img/work/park/buner-4-min.png" alt="">
+      </div>
+      <div class="park-buner park-buner--5" data-scroll data-scroll-speed="2">
+        <img src="img/work/park/buner-5-min.png" alt="">
+      </div>
+      <div class="park-buner park-buner--6" data-scroll data-scroll-speed="4">
+        <img src="img/work/park/buner-6-min.png" alt="">
+      </div>
     </section>
   </div>
-  <section class="index-service">
-    <div class="grid grid-spacing-7">
-      <div class="grid-col-6">
-        <div class="index-service-item index-service-item--purple">
-          <div class="index-service-item-video">
-            <video src="media/service-hover-programming.mp4" muted autoplay loop></video>
-          </div>
-          <div class="index-service-item-content">
-            <div class="text-h3 mb-7 text--center index-service-item-title">Разработка сайта</div>
-            <div class="fade-60 text-body-0 text--center index-service-item-subtitle">
-              Разработка корпоративного сайта, интернет-магазина <br>
-              или лендинга - это к нам
-            </div>
-            <div class="fade-60 text-body-0 text--center mt-auto index-service-item-sign">
-              Корпоративный сайт / Интернет-магазин / Лендинг (Landing Page)
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="grid-col-6">
-        <div class="index-service-item index-service-item--blue">
-          <div class="index-service-item-video">
-            <video src="media/service-hover-chart.webm" muted autoplay loop></video>
-          </div>
-          <div class="index-service-item-content">
-            <div class="text-h3 mb-7 text--center index-service-item-title">Работа с сайтом</div>
-            <div class="fade-60 text-body-0 text--center index-service-item-subtitle">
-              Техническая поддержка, SEO-продвижение и контекстная <br>
-              реклама - мы прокачаем ваш сайт
-            </div>
-            <div class="fade-60 text-body-0 text--center mt-auto index-service-item-sign">
-              Техническая поддержка / SEO-продвижение / Контекстная реклама
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="grid-col-6">
-        <div class="index-service-item index-service-item--orange">
-          <div class="index-service-item-video">
-            <video src="media/service-hover-marketing.webm" muted autoplay loop></video>
-          </div>
-          <div class="index-service-item-content">
-            <div class="text-h3 mb-7 text--center index-service-item-title">Продвижение сайта</div>
-            <div class="fade-60 text-body-0 text--center index-service-item-subtitle">
-              Инстаграм для вашего бизнеса - от оформления <br>
-              до администрирования
-            </div>
-            <div class="fade-60 text-body-0 text--center mt-auto index-service-item-sign">
-              Дизайн и креатив / Оформление аккаунта / Администрирование
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="grid-col-6">
-        <div class="index-service-item index-service-item--green">
-          <div class="index-service-item-video">
-            <video src="media/service-hover-app.webm" muted autoplay loop></video>
-          </div>
-          <div class="index-service-item-content">
-            <div class="text-h3 mb-7 text--center index-service-item-title">Разработка веб-приложений и систем</div>
-            <div class="fade-60 text-body-0 text--center index-service-item-subtitle">
-              Инстаграм для вашего бизнеса - от оформления <br>
-              до администрирования
-            </div>
-            <div class="fade-60 text-body-0 text--center mt-auto index-service-item-sign">
-              Корпоративный сайт / SEO-продвижение / Лендинг (Landing Page)
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="nothing">
-    <div class="nothing__title">
-      Реализуем все ваши <div class="nothing-lamp"><img src="img/lamp.png" alt=""></div> идеи, <br>
-      превратив их <div class="nothing-money"><img src="img/money.png" alt=""></div> в прибыльный <br>
-      интернет-ресурс <div class="nothing-rocket"><img src="img/rocket.png" alt=""></div>
-    </div>
-    <div class="nothing__subtitle">
-      Наша работа находится на стыке творчества и технологий
-      <span>
-        Можете посмотреть наши лучшие работы
-      </span>
-    </div>
-    <button class="nothing__btn btn btn--text btn--contur">
-      <svg class="icon">
-        <use xlink:href="img/icons.svg#to-down" />
-      </svg>
-    </button>
-  </section>
+  <!-- Kravchenko Place -->
+  <div class="work-wrapper" data-scroll-section>
+    <div class="work-fixed-target" id="krav-fixed-target"></div>
 
+    <section class="work krav" data-scroll data-scroll-sticky data-scroll-target="#krav-fixed-target">
+      <div class="container work__container">
+        <div class="work__content" data-scroll data-scroll-speed="2">
+          <div class="work__title krav__title mb-10" data-scroll>
+            Kravchenko <br>
+            Place <img src="img/work/krav/title-icon-min.png" alt=""> <br>
 
-  <section class="work flora">
-    <div class="container flex">
-      <div class="work__content">
-        <div class="work__title flora__title mb-10">
-          Магазин цветов <br>
-          Флора <img src="img/work/flora/title-icon.png" alt="">
+          </div>
+          <div class="lh-1-5 mb-5 mb-lg-10 work__subtitle mobile-fade-in-down text-body-2 text-lg-body-1" data-scroll>
+            Эстетика, современный стиль, комфорт – все это <br>
+            про наше место отдыха. <br>
+            Приезжайте и наслаждайтесь <br>
+            спокойным отдыхом в приятном окружении!
+          </div>
+          <div class="text-subtitle-2 text-lg-subtitle-1 lh-1-5 work__sign mobile-fade-in-down" data-scroll>
+            Разработка <span class="fade-40">сайта</span> <br>
+            Продвижение <span class="fade-40">в топ</span> <br>
+            Техническая поддержка
+          </div>
+          <div class="mb-10"></div>
+          <div class="mb-lg-10"></div>
+          <div class="mobile-fade-in-down flex" data-scroll>
+            <button class="btn btn--white btn--contur" data-fancybox-modal data-type="ajax" data-src="dialog-form.html" >Хочу так же</button>
+          </div>
         </div>
-        <div class="lh-1-5 mb-10">
-          Интернет-магазин цветов «Флора» предлагает <br>
-          уникальные букеты живых цветов собранные по всем <br>
-          правилам флористики
+        <div class="work__preview flex-self-end" data-scroll data-scroll-speed="-2">
+          <picture>
+            <source srcset="img/work/krav/preview-min.webp" type="image/webp">
+            <img src="img/work/krav/preview-min.jpg" alt="">
+          </picture>
         </div>
-        <div class="text-subtitle-1 lh-1-5">
-          Разработка <span class="fade-40">сайта</span> <br>
-          Продвижение <span class="fade-40">в топ</span> <br>
-          Техническая поддержка
-        </div>
-        <div class="mb-10"></div>
-        <div class="mb-10"></div>
-        <button class="btn btn--text btn--contur">Смотреть сайт</button>
       </div>
-      <div class="work__preview flex-self-end">
-        <img src="img/work/flora/preview.jpg" alt="">
-      </div>
-    </div>
-  </section>
 
-  <div class="mb-8"></div>
-
-  <section class="work park">
-    <div class="container flex">
-      <div class="work__content">
-        <div class="work__title park__title mb-10">
-          Инфомат <br>
-          в парке <img src="img/work/park/title-icon.png" alt=""> <br>
-          Краснодар
-        </div>
-        <div class="lh-1-5 mb-10">
-          Эстетика, современный стиль, комфорт – все это <br>
-          про наше место отдыха. <br>
-          Приезжайте и наслаждайтесь <br>
-          спокойным отдыхом в приятном окружении!
-        </div>
-        <div class="text-subtitle-1 lh-1-5">
-          Разработка <span class="fade-40">сайта</span> <br>
-          Продвижение <span class="fade-40">в топ</span> <br>
-          Техническая поддержка
-        </div>
-        <div class="mb-10"></div>
-        <div class="mb-10"></div>
-        <button class="btn btn--text btn--contur">Смотреть сайт</button>
+      <div class="krav-buner krav-buner--1" data-scroll data-scroll-speed="5">
+        <img src="img/work/krav/buner-1-min.png" alt="">
       </div>
-      <div class="work__preview flex-self-end">
-        <img src="img/work/park/preview.jpg" alt="">
+      <div class="krav-buner krav-buner--2" data-scroll data-scroll-speed="4">
+        <img src="img/work/krav/buner-2-min.png" alt="">
       </div>
-    </div>
-  </section>
+      <div class="krav-buner krav-buner--3" data-scroll data-scroll-speed="5" data-scroll-delay="0.25">
+        <img src="img/work/krav/buner-3-min.png" alt="">
+      </div>
+      <div class="krav-buner krav-buner--4" data-scroll data-scroll-speed="3" data-scroll-delay="0.25">
+        <img src="img/work/krav/buner-4-min.png" alt="">
+      </div>
+    </section>
 
-  <section class="partners">
+  </div>
+
+  <section class="partners" data-scroll-section>
     <div class="partners__title">работаем с 2014 года</div>
 
     <div class="partners-grid">
 
-      <div class="partners-item">
+      <div class="partners-item mobile-fade-in-down" data-scroll>
         <div class="partners-item__img">
           <img src="img/partners/kubsau.png" alt="">
         </div>
@@ -216,101 +323,128 @@
         </div>
       </div>
 
-      <div class="partners-item">
+      <div class="partners-item mobile-fade-in-down" data-scroll>
         <div class="partners-item__img">
           <img src="img/partners/rosseti.png" alt="">
         </div>
         <div class="partners-item__title">
-          КубГАУ - один из признанных
-          лидеров высшего аграрного
-          образовании в России
+          Оказание услуг снабжения
+          электроэнергией потребителей
+          Краснодарского края и Адыгеи
         </div>
       </div>
 
-      <div class="partners-item">
+      <div class="partners-item mobile-fade-in-down" data-scroll>
         <div class="partners-item__img">
           <img src="img/partners/matsesta.png" alt="">
         </div>
         <div class="partners-item__title">
-          КубГАУ - один из признанных
-          лидеров высшего аграрного
-          образовании в России
+          Крупнейшее предприятие чаеводческой
+          отрасли России, ведущее свою историю
+          еще с далёкого 1947 года
         </div>
       </div>
 
-      <div class="partners-item">
+      <div class="partners-item mobile-fade-in-down" data-scroll>
         <div class="partners-item__img">
           <img src="img/partners/park-krasnodar.png" alt="">
         </div>
         <div class="partners-item__title">
-          КубГАУ - один из признанных
-          лидеров высшего аграрного
-          образовании в России
+          Японский сад заложен в 2021
+          и открыт в сентябре 2022
+          года в парке «Краснодар»
         </div>
       </div>
 
-      <div class="partners-item">
+      <div class="partners-item mobile-fade-in-down" data-scroll>
         <div class="partners-item__img">
           <img src="img/partners/kkx.png" alt="">
         </div>
         <div class="partners-item__title">
-          КубГАУ - один из признанных
-          лидеров высшего аграрного
-          образовании в России
+          Профессиональный хоровой
+          певческий коллектив,
+          основанный в 1811 году
+
         </div>
       </div>
 
-      <div class="partners-item">
+      <div class="partners-item mobile-fade-in-down" data-scroll>
         <div class="partners-item__img">
           <img src="img/partners/gk.png" alt="">
         </div>
         <div class="partners-item__title">
-          КубГАУ - один из признанных
-          лидеров высшего аграрного
-          образовании в России
+          Федеральное государственное
+          бюджетное образовательное
+          учреждение высшего образования
         </div>
       </div>
 
-      <div class="partners-item">
+      <div class="partners-item mobile-fade-in-down" data-scroll>
         <div class="partners-item__img">
           <img src="img/partners/krav.png" alt="">
         </div>
         <div class="partners-item__title">
-          КубГАУ - один из признанных
-          лидеров высшего аграрного
-          образовании в России
+          Вся база актуальной недвижимости
+          в одном месте. Ремонты квартир
+          и домов любой сложности!
         </div>
       </div>
 
-      <div class="partners-item">
+      <div class="partners-item mobile-fade-in-down" data-scroll>
         <div class="partners-item__img">
           <img src="img/partners/rsmliga.png" alt="">
         </div>
         <div class="partners-item__title">
-          КубГАУ - один из признанных
-          лидеров высшего аграрного
-          образовании в России
+          Развитие физической культуры
+          и спорта, Проведение Чемпионатов,
+          Первенств и прочих Турниров
+        </div>
+      </div>
+
+      <div class="partners-item mobile-fade-in-down" data-scroll>
+        <div class="partners-item__img">
+          <img src="img/partners/new-kuban.png" alt="">
+        </div>
+        <div class="partners-item__title">
+          Общественно-политическая
+          газета, а также крупнейший
+          новостной портал края
+        </div>
+      </div>
+
+      <div class="partners-item mobile-fade-in-down" data-scroll>
+        <div class="partners-item__img">
+          <img src="img/partners/dompodbor.png" alt="">
+        </div>
+        <div class="partners-item__title">
+          Помощь в покупке/продаже
+          недвижимости в Москве,
+          СПб и Сочи
+        </div>
+      </div>
+
+      <div class="partners-item mobile-fade-in-down" data-scroll>
+        <div class="partners-item__img">
+          <img src="img/partners/konditer.png" alt="">
+        </div>
+        <div class="partners-item__title">
+          Федеральное государственное
+          бюджетное образовательное
+          учреждение высшего образования
+        </div>
+      </div>
+
+      <div class="partners-item mobile-fade-in-down" data-scroll>
+        <div class="partners-item__img">
+          <img src="img/partners/flora.png" alt="">
+        </div>
+        <div class="partners-item__title">
+          Уникальные букеты живых цветов
+          собранные по всем правилам
+          флористики
         </div>
       </div>
     </div>
   </section>
-  <footer class="footer">
-    <div class="footer-top">
-      <div class="footer-nav">
-        <div class="text-body-0 text--demibold mb-6">Разработка сайта</div>
-        <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link">Корпоративный сайт</a>
-        <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link">Интернет-магазин</a>
-        <a href="javascript:;" class="text-body-1 fade-80 mb-5 btn btn--link">Landing Page</a>
-      </div>
-    </div>
 
-    <div class="flex">
-      <img src="img/timeweb.png" alt="" class="mr-4 d-block">
-      <img src="img/bitrix.png" alt="" class="mr-4 d-block">
-      <img src="img/direct.png" alt="" class="mr-4 d-block">
-      <img src="img/bitrix24.png" alt="" class="mr-4 d-block">
-    </div>
-  </footer>
-</body>
-
-</html>
+  <%= _.template(require('./html-includes/footer.html').default)() %>

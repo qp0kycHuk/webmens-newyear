@@ -8,16 +8,16 @@ const mask = createImg('/img/code-mask.svg');
 const maskContur = createImg('/img/code-mask-contur.svg');
 
 
-const images = [
-  createImg('/img/test-1.jpg'),
-  createImg('/img/test-2.jpg'),
-  createImg('/img/test-3.jpg'),
+let images = [
+  createImg('/img/started-work-1.jpg'),
+  createImg('/img/started-work-2.jpg'),
+  createImg('/img/started-work-3.jpg'),
 ]
 
 let img = images[0];
 
 
-let isOver = false;
+let isOver = true;
 
 // init properties of round image
 const rect = {
@@ -30,8 +30,8 @@ const rect = {
 // current properties of object
 // change in request animation frame
 const current = {
-  width: rect.width,
-  height: rect.height
+  width: 0,
+  height: 0
 }
 
 // target properties for object
@@ -51,9 +51,14 @@ let changingImageTimeout2
 
 function init() {
 
-  cover = document.querySelector('.code-cursor-cover')
+  cover = document.querySelector('.started__logo-wrapper')
   canvas = document.querySelector('.code-cursor-wrapper canvas')
-  context = canvas.getContext("2d");
+  context = canvas?.getContext("2d");
+
+  if (!canvas) {
+    return;
+  }
+
   setSizes()
 
   followMouse()
@@ -71,6 +76,16 @@ function init() {
     cover.addEventListener(getSupportedEvents().end, mouseleaveHandler)
 
   }
+
+  document.addEventListener('cheatsuccess', (event) => {
+    images = [
+      createImg('/img/test-1.jpg'),
+      createImg('/img/test-2.jpg'),
+      createImg('/img/test-3.jpg'),
+    ]
+
+    img = images[0];
+  })
 }
 
 function setSizes() {
@@ -88,6 +103,7 @@ function mousemoveHandler(event) {
   event = eventsUnify(event)
 
   const { left, top, width, height } = canvas.getBoundingClientRect()
+  const { width: coverWidth, left: coverLeft } = cover.getBoundingClientRect()
   const { width: docWidth, height: docHeight } = document.body.getBoundingClientRect()
 
   const offsetX = left + event.clientX
@@ -98,7 +114,7 @@ function mousemoveHandler(event) {
   const oldSrc = img.src
 
   for (let i = 0; i < images.length; i++) {
-    if (offsetX / width <= (i + 1) / images.length) {
+    if ((offsetX - coverLeft) / coverWidth <= (i + 1) / images.length) {
       img = images[i]
       break
     }
@@ -119,10 +135,6 @@ function mousemoveHandler(event) {
     }, 600)
   }
 }
-
-
-
-
 
 function followMouse() {
   key = requestAnimationFrame(followMouse);
@@ -163,8 +175,18 @@ function followMouse() {
     target.height = rect.height
   }
 
+  if (!isOver) {
+    target.width = target.height = 0
+    coof.width = coof.height = 0.075
+  }
+
+  if (current.width == 0) {
+    current.x = false
+    current.y = false
+  }
+
   ['x', 'y', 'width', 'height'].forEach((key) => {
-    if (!current[key]) {
+    if (current[key] === false) {
       current[key] = target[key];
     }
 
@@ -180,7 +202,6 @@ function followMouse() {
   draw(current)
 
 }
-
 
 function draw(options) {
   const position = {
@@ -204,10 +225,10 @@ function draw(options) {
 }
 
 function mouseleaveHandler(event) {
-  console.log('leave', event.target);
   setTimeout(() => {
-    target.x = rect.x
-    target.y = rect.y
+    // target.x = false
+    // target.y = false
+
     isOver = false
   }, 100)
 }
