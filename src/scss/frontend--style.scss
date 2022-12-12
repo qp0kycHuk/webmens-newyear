@@ -68,6 +68,10 @@ body {
 	@media(max-width:$sm) {
 		padding-top: 60px;
 	}
+
+	@media(max-width:$xs) {
+		padding-top: 56px;
+	}
 }
 
 section {}
@@ -493,6 +497,13 @@ section {}
 	z-index        : var(--zi-l1);
 	transition     : .2s;
 
+	// @media(max-width:$md) {
+	// 	position      : sticky;
+	// 	top           : 0;
+	// 	padding-top   : 20px;
+	// 	padding-bottom: 20px;
+	// }
+
 	@media(max-width:$sm) {
 		padding-top   : 12px;
 		padding-bottom: 12px;
@@ -690,6 +701,7 @@ body:not(.loaded) .header {
 	&__logo {
 		height        : 195px;
 		mix-blend-mode: luminosity;
+		mix-blend-mode: plus-lighter;
 		position      : relative;
 		z-index       : 3;
 
@@ -1902,6 +1914,8 @@ body:not(.loaded) .started {
 		font-size  : 26px;
 		display    : flex;
 		align-items: center;
+		transition : .15s;
+
 
 		@media(max-width:$md) {
 			font-size: 20px;
@@ -1910,6 +1924,10 @@ body:not(.loaded) .started {
 		@media(max-width:$xs) {
 			flex-direction: column;
 			align-items   : stretch;
+		}
+
+		&:active {
+			transform: translateY(2px);
 		}
 
 		&+& {

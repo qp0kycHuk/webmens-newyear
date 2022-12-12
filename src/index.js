@@ -5,6 +5,7 @@ import theme from './js/theme';
 import inputmask from "./js/inputmask";
 import scrollTo from "./js/scrollTo";
 import started from "./js/started";
+import cheat from "./js/cheat";
 import lightening from "./js/lightening";
 import tab from 'npm-kit-tab';
 import toggle from 'npm-kit-toggle';
@@ -58,6 +59,7 @@ function loadHandler() {
 	inputmask.init(document)
 	lightening.init()
 	started.init()
+	cheat.init()
 
 	ripple.attach('.btn')
 	ripple.attach('.waved')
@@ -73,7 +75,8 @@ function loadHandler() {
 }
 
 function scrollHandler(event) {
-	if (event.scroll.y <= 10) {
+	if ((window.screen.width > MEDIA.md && event.scroll.y <= 32) ||
+		(window.screen.width <= MEDIA.md && window.scrollY <= 0)) {
 		document.body.classList.add('scroll-top')
 	} else {
 		document.body.classList.remove('scroll-top')

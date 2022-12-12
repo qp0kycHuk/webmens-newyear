@@ -44,7 +44,9 @@
 		</a>
 		<div class="header-nav">
 			<a href="" class="header-nav__item">Услуги</a>
-			<button class="header-nav__item" data-scroll-to="#flora">Портфолио</button>
+			<% if(isIndex){ %>
+				<button class="header-nav__item" data-scroll-to="#flora">Портфолио</button>
+			<% } %>
 			<a href="" class="header-nav__item">Контакты</a>
 		</div>
 		<a href="" class="header__phone link-hover">+7 (918) 317-99-73</a>
@@ -91,7 +93,8 @@
 				<a href="javascript:;" class="text-subtitle-2 fade-80 mb-5 btn btn--link link-hover">info@stdkit.ru</a>
 			</div>
 			<div class="mt-10 px-4">
-				<button class="btn btn--text btn--contur mt-4 w-100 text-body-2 text--demibold">Заказать звонок</button>
+				<button data-fancybox-modal data-type="ajax" data-src="dialog-form.html" data-toggle-link="menu"
+					class="btn btn--text btn--contur mt-4 w-100 text-body-2 text--demibold">Заказать звонок</button>
 			</div>
 		</div>
 	</div>

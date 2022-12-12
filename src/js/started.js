@@ -8,10 +8,10 @@ const mask = createImg('/img/code-mask.svg');
 const maskContur = createImg('/img/code-mask-contur.svg');
 
 
-const images = [
-  createImg('/img/test-1.jpg'),
-  createImg('/img/test-2.jpg'),
-  createImg('/img/test-3.jpg'),
+let images = [
+  createImg('/img/started-work-1.jpg'),
+  createImg('/img/started-work-2.jpg'),
+  createImg('/img/started-work-3.jpg'),
 ]
 
 let img = images[0];
@@ -58,7 +58,7 @@ function init() {
   if (!canvas) {
     return;
   }
-  
+
   setSizes()
 
   followMouse()
@@ -76,6 +76,16 @@ function init() {
     cover.addEventListener(getSupportedEvents().end, mouseleaveHandler)
 
   }
+
+  document.addEventListener('cheatsuccess', (event) => {
+    images = [
+      createImg('/img/test-1.jpg'),
+      createImg('/img/test-2.jpg'),
+      createImg('/img/test-3.jpg'),
+    ]
+
+    img = images[0];
+  })
 }
 
 function setSizes() {
@@ -215,7 +225,6 @@ function draw(options) {
 }
 
 function mouseleaveHandler(event) {
-  console.log('leave', event.target);
   setTimeout(() => {
     // target.x = false
     // target.y = false
