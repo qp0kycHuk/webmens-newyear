@@ -100,7 +100,6 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: "./src/img/", to: "./img/" },
-        { from: "./src/media/", to: "./media/" },
         { from: "./src/fonts/", to: "./fonts/" },
         { from: "./src/favicon/", to: "./favicon/" },
         ...generateCopyPlugins('./src/html-dialogs')
