@@ -1012,6 +1012,7 @@ section {}
 
 	&-img {
 		position: absolute;
+		pointer-events: none;
 
 		@media (max-width:$sm) {
 			display: none;
