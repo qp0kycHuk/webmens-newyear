@@ -22,9 +22,6 @@ window.addEventListener('load', () => {
 
 	scroll = new LocomotiveScroll();
 
-	// scrollHandler()
-
-	// mapsInit()
 })
 
 
@@ -32,8 +29,6 @@ function loadHandler() {
 	fancybox.init()
 	scrollTo.init()
 	ripple.init()
-	// cheat.init()
-	window.Fancybox.modal.open('dialog-success.html', { type: 'ajax' })
 
 	ripple.attach('.btn')
 	ripple.attach('.waved')
