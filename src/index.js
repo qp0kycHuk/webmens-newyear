@@ -8,7 +8,7 @@ import LocomotiveScroll from 'locomotive-scroll';
 
 import './scss/index.scss';
 
-Swiper.use([Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade, Lazy]);
+Swiper.use([Navigation, Autoplay]);
 Swiper.defaults.touchStartPreventDefault = false
 window.Swiper = Swiper
 window.ripple = ripple
