@@ -1,14 +1,14 @@
 import fancybox from "./js/fancybox";
 import scrollTo from "./js/scrollTo";
 import ripple from 'npm-kit-ripple';
-import Swiper, { Navigation, Autoplay, } from 'swiper';
+import Swiper, { Navigation, Autoplay, Manipulation } from 'swiper';
 import LocomotiveScroll from 'locomotive-scroll';
 // import ymaps from 'ymaps';
 
 
 import './scss/index.scss';
 
-Swiper.use([Navigation, Autoplay]);
+Swiper.use([Navigation, Autoplay, Manipulation]);
 Swiper.defaults.touchStartPreventDefault = false
 window.Swiper = Swiper
 window.ripple = ripple
