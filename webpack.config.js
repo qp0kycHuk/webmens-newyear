@@ -47,7 +47,7 @@ const cssLoader = {
   },
 }
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/js/index.js',
   resolve: {
     alias: {
       '@src': path.resolve(__dirname, 'src/')
@@ -65,18 +65,18 @@ module.exports = {
         test: /\.(png|jpg|jpeg|gif|svg)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'img/[name][ext]'
+          filename: 'img/[name][hash][ext]'
         }
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'fonts/[name][ext]'
-        }
+          filename: 'fonts/[name][ext]',
+        },
       },
-      { test: /\.css$/, use: [MiniCssExtractPlugin.loader, cssLoader, 'postcss-loader'] },
-      { test: /\.s[ac]ss$/, use: [MiniCssExtractPlugin.loader, cssLoader, 'postcss-loader', 'sass-loader'] },
+      { test: /\.css$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'] },
+      { test: /\.s[ac]ss$/, use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'] },
       {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,

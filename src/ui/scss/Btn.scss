@@ -33,7 +33,7 @@
 	--size       : 50px;
 	height       : var(--size);
 	padding      : 0 calc(var(--size) / 2);
-	border-radius: 8px;
+	border-radius: var(--size);
 
 	font-size  : 18px;
 	font-family: var(--font-base);
